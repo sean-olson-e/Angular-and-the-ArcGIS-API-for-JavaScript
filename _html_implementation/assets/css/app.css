@@ -1,0 +1,32 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-family: sans-serif;
+  font-weight: 500;
+  width: 80%;
+  margin: 50px 10%;
+}
+
+.app-container{
+  width: 80%;
+  margin: 50px 10%;
+  background-color: #efefef;
+  outline: solid 1px #ccc;
+  height: 600px;
+  box-sizing: border-box;
+}
+
+.app-map{
+  width: 100%;
+  height: 600px;
+  margin: 0;
+  padding: 0;  
+  background-color: wheat;
+  box-sizing: border-box;
+}

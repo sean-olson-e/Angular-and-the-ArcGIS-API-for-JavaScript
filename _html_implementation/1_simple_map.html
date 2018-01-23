@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple Map Implementation</title>
+    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.5/"></script>
+
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "dojo/domReady!"
+        ], function (
+            Map, MapView
+        ) {
+                var map = new Map({
+                    basemap: "gray"
+                });
+
+                var view = new MapView({
+                    container: "viewDiv",
+                    map: map,
+                    zoom: 16,
+                    center: [18.06, 59.34]
+                });
+            }
+        );
+    </script>
+
+</head>
+
+<body>
+    <h1>Simple Map Implementation</h1>
+    <div class="app-container">
+        <div id="viewDiv" class="app-map"></div>
+    </div>
+</body>
+
+</html>
