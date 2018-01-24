@@ -1,9 +1,10 @@
-# 2018 Esri Developer Summit: Building Mapping Apps using the ArcGIS API and Angular CLI
+# 2018 Esri Developer Summit: 
+# Building Web Applications using the ArcGIS API and Angular CLI
 
-In this repository you will find code sample and support materials that will walk you through the 
+In this repository you will find code samples and support materials that will walk you through the 
 implementation of ArcGIS API for JavaScript in Angular (2+) applications 
 
-##Using this Repository
+## Using this Repository
 In addition to the simple *kick-start* implementation in the master branch, you will find more
 complex samples in the other branches of this repository.    
 
@@ -17,7 +18,7 @@ git config --bool core.bare false
 git reset --hard
 ````
 
-##Creating an Angular Application Using the CLI 
+## Creating an Angular Application Using the CLI 
 The Angular CLI makes it easy to create an application that already works, right out of the box. It already follows our best practices, and it's really simple to get started.
 
 1. Make sure you have Angular CLI installed. See the instructions [here](https://github.com/angular/angular-cli).
@@ -32,7 +33,7 @@ The Angular CLI makes it easy to create an application that already works, right
 
   Navigate to http://localhost:4200/ and the basic app should run just fine. The app will automatically reload if you change any of the source files.
 
-##Implementing the ArcGIS API for JavaScript
+## Implementing the ArcGIS API for JavaScript
 
 Setting up your Angular applciation to leverage the ArcGIS API for JavaScript requires these dependencies: 
 
@@ -71,12 +72,6 @@ And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https
 ```
   <app-esri-map></app-esri-map>
 ```
-
-
-
-# Contributing
-
-Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing).
 
 # Licensing
 
