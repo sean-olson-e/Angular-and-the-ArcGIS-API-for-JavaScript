@@ -35,14 +35,14 @@ The Angular CLI makes it easy to create an application that already works, right
 
 ## Implementing the ArcGIS API for JavaScript
 
-Setting up your Angular applciation to leverage the ArcGIS API for JavaScript requires these dependencies: 
+Using the ArcGIS API for JavaScript in an Angular applciation requires these dependencies: 
 
 * [Angular Devkit](https://github.com/angular/devkit) Development tools and libraries specialized for Angular
 * [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
 * [`esri-loader`](https://github.com/Esri/esri-loader) A library that helps load the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) into non-Dojo applications.
 * [`arcgis-js-api.d.ts`](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript) Esri TypeScript type definitions
 
-### Install `esri-loader`, Esri TypeScript types, and Angular Devkit
+### 1. Install `esri-loader`, Esri TypeScript types, and Angular Devkit
 
 ```
   npm install --save esri-loader
@@ -50,7 +50,7 @@ Setting up your Angular applciation to leverage the ArcGIS API for JavaScript re
   npm install --save @angular-devkit/core
 ```
 
-### Inlcude the TypeScript definitions in the TypeScript application config files:
+### 2. Inlcude the TypeScript definitions in the TypeScript application config files:
 * Add `"types": ["arcgis-js-api"]` to `tsconfig.app.json`
 
 * Add  `"types": ["arcgis-js-api"]` to `tsconfig.spec.json`
@@ -59,13 +59,13 @@ Setting up your Angular applciation to leverage the ArcGIS API for JavaScript re
 
 And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript).
 
-### Generate a simple mapping component
+### 3. Generate a simple mapping component
 
 ```
   ng generate component esri-map
 ```
 
-### Import the Esri Loader, ViewChild and ElementRef modules into your Component
+### 4. Import the Esri Loader, ViewChild and ElementRef modules into your Component
 This generic code sample provides an quick guide to building out a basic mapping component. In this example, the 
 `@ViewChild` directive takes the argument `mapViewNode` which targets the div in the component template where
 the map will be rendered, e.g., `<div #mapViewNode></div>`  
