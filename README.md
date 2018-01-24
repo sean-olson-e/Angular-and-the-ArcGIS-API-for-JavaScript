@@ -59,7 +59,7 @@ Using the ArcGIS API for JavaScript in an Angular applciation requires these dep
 
 And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript).
 
-### 3. Generate a simple mapping component
+### 3. Generate a simple mapping component using the Angular CLI
 
 ```
   ng generate component esri-map
