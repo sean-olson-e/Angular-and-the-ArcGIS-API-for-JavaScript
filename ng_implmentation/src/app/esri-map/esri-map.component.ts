@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-
 import { loadModules } from 'esri-loader';
 
 @Component({
@@ -7,7 +6,6 @@ import { loadModules } from 'esri-loader';
   templateUrl: './esri-map.component.html',
   styleUrls: ['./esri-map.component.css']
 })
-
 
 export class EsriMapComponent implements OnInit {
 
@@ -39,6 +37,5 @@ export class EsriMapComponent implements OnInit {
     .catch(err => {
       console.log(err);
     });
-  } // ngOnInit
-
+  }
 }

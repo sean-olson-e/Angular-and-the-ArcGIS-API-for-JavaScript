@@ -1,5 +1,4 @@
-# 2018 Esri Developer Summit: 
-# Building Web Applications using the ArcGIS API and Angular CLI
+# 2018 Esri Developer Summit: Building Web Applications using the ArcGIS API and Angular CLI
 
 In this repository you will find code samples and support materials that will walk you through the 
 implementation of ArcGIS API for JavaScript in Angular (2+) applications 
@@ -42,6 +41,7 @@ Setting up your Angular applciation to leverage the ArcGIS API for JavaScript re
 * [`esri-loader`](https://github.com/Esri/esri-loader) A library that helps load the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) into non-Dojo applications.
 * [`arcgis-js-api.d.ts`](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript) Esri TypeScript type definitions
 
+## Implementing the ArcGIS API for JavaScript
 
 ### Install `esri-loader`, Esri TypeScript types, and Angular Devkit
 
@@ -50,6 +50,11 @@ Setting up your Angular applciation to leverage the ArcGIS API for JavaScript re
   npm install --save @types/arcgis-js-api
   npm install --save @angular-devkit/core
 ```
+
+### Inlcude the TypeScript definitions in the TypeScript application config files:
+* Add `"types": ["arcgis-js-api"]` to `tsconfig.app.json`
+
+* Add  `"types": ["arcgis-js-api"]` to `tsconfig.spec.json`
 
 [`esri-loader`](https://github.com/Esri/esri-loader#usage) is a low level service needed to load and use ArcGIS modules (v3.x or v4.x) in non-Dojo applications.
 
@@ -61,17 +66,52 @@ And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https
   ng generate component esri-map
 ```
 
-1. Add `"types": ["arcgis-js-api"]` to `tsconfig.app.json`
-
-2. Add  `"types": ["arcgis-js-api"]` to `tsconfig.spec.json`
-
-3. Copy the contents of this repo into the `angular-esri-cli-app/src/app/esri-map` directory
-
-4. Add the following code to the bottom of the `app.component.html` file
+### Import the Esri Loader, ViewChild and ElementRef modules into your Component
+This generic code sample provides an quick guide to building out a basic mapping component. In this example, the 
+`@ViewChild` directive takes the argument `mapViewNode` which targets the div in the component template where
+the map will be rendered, e.g., `<div #mapViewNode></div>`  
 
 ```
-  <app-esri-map></app-esri-map>
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { loadModules } from 'esri-loader';
+
+...
+
+export class YourMapComponent implements OnInit {
+
+  public mapView: __esri.MapView;
+
+  // this is needed to be able to create the MapView at the DOM element in this component
+  @ViewChild('mapViewNode') private mapViewEl: ElementRef;
+
+  constructor() { }
+
+  public ngOnInit() {
+
+    return loadModules([
+      'esri/Map',
+      'esri/views/MapView',
+      ...
+    ]).then(([Map, MapView, ...]) => {
+
+      const map: __esri.Map = new Map({
+        basemap: 'hybrid'
+      });
+
+      this.mapView = new MapView({
+        container: this.mapViewEl.nativeElement,
+        map: map,
+        ...
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
+}
 ```
+
+
 
 # Licensing
 
