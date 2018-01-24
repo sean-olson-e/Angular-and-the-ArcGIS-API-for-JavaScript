@@ -1,4 +1,4 @@
-# 2018 Esri Developer Summit: Building Web Applications using the ArcGIS API and Angular CLI
+# 2018 Esri Developer Summit: Building Web Applications using the ArcGIS API for JavaScript and Angular CLI
 
 In this repository you will find code samples and support materials that will walk you through the 
 implementation of ArcGIS API for JavaScript in Angular (2+) applications 
