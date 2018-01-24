@@ -1,4 +1,4 @@
-# 2018 Esri Developer Summit: Building Web Applications using the ArcGIS API for JavaScript and Angular CLI
+# 2018 Esri Developer Summit: Building Web Applications using the ArcGIS API for JavaScript and the Angular CLI
 
 In this repository you will find code samples and support materials that will walk you through the 
 implementation of ArcGIS API for JavaScript in Angular (2+) applications 
@@ -8,6 +8,7 @@ In addition to the simple *kick-start* implementation in the master branch, you 
 complex samples in the other branches of this repository.    
 
 ### Branches: 
+* master -- simple map application
 
 ### Cloning this Repository
 To clone this repository with all of its branches, run these commands from your console.
