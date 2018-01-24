@@ -42,8 +42,6 @@ Setting up your Angular applciation to leverage the ArcGIS API for JavaScript re
 * [`esri-loader`](https://github.com/Esri/esri-loader) A library that helps load the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) into non-Dojo applications.
 * [`arcgis-js-api.d.ts`](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript) Esri TypeScript type definitions
 
-## Implementing the ArcGIS API for JavaScript
-
 ### Install `esri-loader`, Esri TypeScript types, and Angular Devkit
 
 ```
