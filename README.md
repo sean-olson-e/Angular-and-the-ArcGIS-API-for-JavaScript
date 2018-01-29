@@ -8,7 +8,8 @@ In addition to the simple *kick-start* implementation in the master branch, you 
 complex samples in the other branches of this repository.    
 
 ### Branches: 
-* master -- simple map application
+* master -- implment the ArcGIS API in Angular using the Esri Loader
+* map_state_management -- implements map state mangement using an Angular service
 
 ### Cloning this Repository
 To clone this repository with all of its branches, run these commands from your console.
