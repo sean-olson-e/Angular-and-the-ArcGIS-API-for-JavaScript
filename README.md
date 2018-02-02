@@ -1,13 +1,11 @@
 # *Building Web Applications with ArcGIS API for the JavaScript, using the Angular CLI*
 
-
 This repository was developed to support the *Esri Dev Summit 2018* presentation of similar name.  In the ```samples``` directory you will find a number of implementations of the ArcGIS API for JavaScript in Angular (2+) applications, using the [`esri-loader`](https://github.com/Esri/esri-loader).
+
 
 ### In this Repository
 Each of the implementations in the ```samples``` directory is accompanied by a README file that will walk you through the given implementation. Here is what you'll find there.
 * ```1_esri_loader``` -- a simple *kick-start* implementation.
-
-
 
 ### Licensing
 
