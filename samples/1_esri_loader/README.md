@@ -1,24 +1,8 @@
-# 2018 Esri Developer Summit: *Building Web Applications using the ArcGIS API for JavaScript and the Angular CLI*
+# Esri Loader Kickstarter
 
-In this repository you will find code samples and support materials that will walk you through the 
-implementation of ArcGIS API for JavaScript in Angular (2+) applications 
+This sample will provides a boilerplate for standing up an Angular app that implements the ArcGIS API for JavaScript.  We leverage the Angular CLI and the [esri_loader](https://github.com/Esri/esri-loader)    
 
-## Using this Repository
-In addition to the simple *kick-start* implementation in the master branch, you will find more
-complex samples in the other branches of this repository.    
-
-### Branches: 
-* master -- simple map application
-
-### Cloning this Repository
-To clone this repository with all of its branches, run these commands from your console.
-````
-git clone --bare https://github.com/sean-olson/2018_esri_dev_summit_angular_cli.git
-git config --bool core.bare false
-git reset --hard
-````
-
-## Creating an Angular Application Using the CLI 
+## Generate an Angular Application Using the CLI 
 The Angular CLI makes it easy to create an application that already works, right out of the box. It already follows our best practices, and it's really simple to get started.
 
 1. Make sure you have Angular CLI installed. See the instructions [here](https://github.com/angular/angular-cli).
@@ -26,8 +10,8 @@ The Angular CLI makes it easy to create an application that already works, right
 2. Generate your Angular project
 
 ```
-  ng new angular-cli-esri-app
-  cd angular-cli-esri-app
+  ng new my-app
+  cd my-app
   ng serve
 ```
 
