@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-import {loadModules} from 'esri-loader';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { loadModules } from 'esri-loader';
 
-import {MapStateService} from '../services/map-state.service';
+import { MapStateService } from '../services/map-state.service';
 
 @Component({
   selector: 'app-esri-map',
@@ -22,44 +22,45 @@ export class EsriMapComponent implements OnInit {
   }
 
   public ngOnInit() {
-
+    // use esri-loader to load JSAPI modules
     return loadModules([
       'esri/Map',
       'esri/views/MapView',
-      'esri/Graphic',
-      'esri/geometry/Point'
-    ]).then(([Map, MapView, Graphic, Point]) => {
+      'esri/Graphic'
+    ])
+      .then(([Map, MapView, Graphic]) => {
+        const map: __esri.Map = new Map({
+          basemap: 'hybrid'
+        });
 
-      const map: __esri.Map = new Map({
-        basemap: 'hybrid'
-      });
+        this.mapView = new MapView({
+          container: this.mapViewEl.nativeElement,
+          center: [-12.287, -37.114],
+          zoom: 12,
+          map: map
+        });
 
-      this.mapView = new MapView({
-        container: this.mapViewEl.nativeElement,
-        center: [-12.287, -37.114],
-        zoom: 12,
-        map: map
-      });
-
-      this.mapView.when(
-        (vw) => {
-          if (this.msService.points.length) {
-            this.mapView.graphics.addMany(this.msService.points);
+        this.mapView.when(
+          () => {
+            if (this.msService.points.length) {
+              // add any point graphics stored in the MapStateService
+              // from the user's clicks from previous navigations to this app route
+              this.mapView.graphics.addMany(this.msService.points);
+            }
+          },
+          (err) => {
+            console.log(err);
           }
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
+        );
 
-      this.mapView.on('click', (event) => {
-
-        this.msService.addPoint(new Graphic({
-            geometry: new Point({
+        this.mapView.on('click', (event: __esri.MapViewClickEvent) => {
+          const pointGraphic: __esri.Graphic = new Graphic({
+            geometry: {
+              type: 'point',
               longitude: event.mapPoint.longitude,
               latitude: event.mapPoint.latitude,
               spatialReference: event.mapPoint.spatialReference
-            }),
+            },
             symbol: {
               type: 'simple-marker',
               color: [119, 40, 119],
@@ -68,13 +69,13 @@ export class EsriMapComponent implements OnInit {
                 width: 1
               }
             }
-          })
-        );
+          });
 
-        this.mapView.graphics.add(this.msService.points[this.msService.points.length - 1]);
+          this.msService.addPoint(pointGraphic);
 
-      });
-    })
+          this.mapView.graphics.add(this.msService.points[this.msService.points.length - 1]);
+        });
+      })
       .catch(err => {
         console.log(err);
       });
