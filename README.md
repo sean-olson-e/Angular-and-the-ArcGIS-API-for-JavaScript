@@ -5,7 +5,7 @@ This repository was developed to support the *Esri Dev Summit 2018* presentation
 
 ### In this Repository
 Each of the implementations in the ```samples``` directory is accompanied by a README file that will walk you through the given implementation. Here is what you'll find there.
-* ```1_esri_loader``` -- a simple *kick-start* implementation.
+* [1_esri_loader](https://github.com/sean-olson-esri/2018_dev_summit_arcgis_api_angular_cli/tree/master/samples/1_esri_loader) -- a simple *kick-start* implementation.
 
 ### Licensing
 
