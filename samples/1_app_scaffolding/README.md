@@ -1,4 +1,4 @@
-# Esri Loader Kickstarter
+# App Scaffolding
 
 This sample will provides a boilerplate for standing up an Angular app that implements the ArcGIS API for JavaScript.  We leverage the Angular CLI and the [esri_loader](https://github.com/Esri/esri-loader)    
 
