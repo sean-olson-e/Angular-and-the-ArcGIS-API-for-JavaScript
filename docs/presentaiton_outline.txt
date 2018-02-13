@@ -1,0 +1,7 @@
+1. standing up an angulr cli app with esri loader
+2. more on the esri loader
+3. working with type script
+4. asynchronicity - simple (encapculated)
+5. asynchronicity - less simple (using a service)
+6. state management - simple
+7. state management - less simple
