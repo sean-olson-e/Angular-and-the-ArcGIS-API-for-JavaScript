@@ -2,21 +2,6 @@
 
 This sample will provides a boilerplate for standing up an Angular app that implements the ArcGIS API for JavaScript.  We leverage the Angular CLI and the [esri_loader](https://github.com/Esri/esri-loader)    
 
-## Generate an Angular Application Using the CLI 
-The Angular CLI makes it easy to create an application that already works, right out of the box. It already follows our best practices, and it's really simple to get started.
-
-1. Make sure you have Angular CLI installed. See the instructions [here](https://github.com/angular/angular-cli).
-
-2. Generate your Angular project
-
-```
-  ng new my-app
-  cd my-app
-  ng serve
-```
-
-  Navigate to http://localhost:4200/ and the basic app should run just fine. The app will automatically reload if you change any of the source files.
-
 ## Implementing the ArcGIS API for JavaScript
 
 Using the ArcGIS API for JavaScript in an Angular applciation requires these dependencies: 
