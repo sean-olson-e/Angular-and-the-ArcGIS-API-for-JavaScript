@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { loadModules } from 'esri-loader';
+import esri = __esri;
 
 @Component({
   selector: 'app-esri-map',
@@ -9,7 +10,7 @@ import { loadModules } from 'esri-loader';
 
 export class EsriMapComponent implements OnInit {
 
-  public mapView: __esri.MapView;
+  public mapView: esri.MapView;
 
   // this is needed to be able to create the MapView at the DOM element in this component
   @ViewChild('mapViewNode') private mapViewEl: ElementRef;
@@ -23,7 +24,7 @@ export class EsriMapComponent implements OnInit {
       'esri/views/MapView'
     ]).then(([Map, MapView]) => {
 
-      const map: __esri.Map = new Map({
+      const map: esri.Map = new Map({
         basemap: 'hybrid'
       });
 

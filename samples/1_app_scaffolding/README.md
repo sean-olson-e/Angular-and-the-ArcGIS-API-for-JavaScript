@@ -29,76 +29,27 @@ Using the ArcGIS API for JavaScript in an Angular applciation requires these dep
 ### 1. Install `esri-loader`, Esri TypeScript types, and Angular Devkit
 
 ```
+  npm install
   npm install --save esri-loader
   npm install --save @types/arcgis-js-api
-  npm install --save @angular-devkit/core
+  npm install --save @angular-devkit/core  // optional for this sample
+  
 ```
 
-### 2. Inlcude the TypeScript definitions in the TypeScript application config files:
-* Add `"types": ["arcgis-js-api"]` to `tsconfig.app.json`
+### 2. Test run the app
 
-* Add  `"types": ["arcgis-js-api"]` to `tsconfig.spec.json`
-
-[`esri-loader`](https://github.com/Esri/esri-loader#usage) is a low level service needed to load and use ArcGIS modules (v3.x or v4.x) in non-Dojo applications.
-
-And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript).
-
-### 3. Generate a simple mapping component using the Angular CLI
+Run this command and then navigate to `http://localhost:4200`
 
 ```
-  ng generate component esri-map
-```
 
-### 4. Import the Esri Loader, ViewChild and ElementRef modules into your Component
-This generic code sample provides an quick guide to building out a basic mapping component. In this example, the 
-`@ViewChild` directive takes the argument `mapViewNode` which targets the div in the component template where
-the map will be rendered, e.g., `<div #mapViewNode></div>`  
+  ng serve
 
 ```
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { loadModules } from 'esri-loader';
-
-...
-
-export class YourMapComponent implements OnInit {
-
-  public mapView: __esri.MapView;
-
-  // this is needed to be able to create the MapView at the DOM element in this component
-  @ViewChild('mapViewNode') private mapViewEl: ElementRef;
-
-  constructor() { }
-
-  public ngOnInit() {
-
-    return loadModules([
-      'esri/Map',
-      'esri/views/MapView',
-      ...
-    ]).then(([Map, MapView, ...]) => {
-
-      const map: __esri.Map = new Map({
-        basemap: 'hybrid'
-      });
-
-      this.mapView = new MapView({
-        container: this.mapViewEl.nativeElement,
-        map: map,
-        ...
-      });
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  }
-}
-```
-
 
 
 # Licensing
 
-Copyright 2017 Esri
+Copyright 2018 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
