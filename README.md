@@ -4,13 +4,17 @@ This repository was developed to support the *Esri Dev Summit 2018* presentation
 
 ### In this Repository
 
-This repository contains multiple, standalone Angular application samples that share a top-level `.angular-cli.json` and `package.json`. This saves us from having many individual Angular CLI configurations and just as many repeats of `node_modules` dependencies. The catch here is that we will have more verbose `ng ...` commands to ensure that we are pointing the Angular CLI to an appropriate sample application directory.
+This repository contains multiple, standalone Angular application samples that share a top-level `.angular-cli.json`* and `package.json`. This saves us from having many individual Angular CLI configurations and just as many repeats of `node_modules` dependencies. The catch here is that we will have more verbose `ng ...` commands to ensure that we are pointing the Angular CLI to an appropriate sample application directory.
 
+*not to sidetrack you, but if you're curious: https://github.com/angular/angular-cli/wiki/stories-multiple-apps
 
 #### Getting started
 
+_TODO: update this section with info on how we got here in the first place? i.e. global angular cli, esri-loader, esri types, angular devkit?_
+
 ```bash
 # one-time only when cloning this repo
+npm install -g @angular/cli
 npm install
 
 # each time you want to begin serving/watching sample 1 for local development
@@ -36,7 +40,7 @@ Each of the implementations in the ```samples``` directory is accompanied by a R
 
 ### Licensing
 
-Copyright 2017 Esri
+Copyright 2018 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
