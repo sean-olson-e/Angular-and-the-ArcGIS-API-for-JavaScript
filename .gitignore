@@ -6,10 +6,10 @@ Thumbs.db
 my_notes/
 testbed/
 
-/dist/
+**/dist/
 bazel-*
 e2e_test.*
-node_modules/
+**/node_modules/
 bower_components
 tools/gulp-tasks/cldr/cldr-data/
 

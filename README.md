@@ -2,10 +2,37 @@
 
 This repository was developed to support the *Esri Dev Summit 2018* presentation of similar name.  In the [samples](https://github.com/sean-olson-esri/2018_dev_summit_arcgis_api_angular_cli/tree/master/samples) directory you will find a number of implementations of the ArcGIS API for JavaScript in Angular (2+) applications, using the [`esri-loader`](https://github.com/Esri/esri-loader).
 
-
 ### In this Repository
+
+This repository contains multiple, standalone Angular application samples that share a top-level `.angular-cli.json` and `package.json`. This saves us from having many individual Angular CLI configurations and just as many repeats of `node_modules` dependencies. The catch here is that we will have more verbose `ng ...` commands to ensure that we are pointing the Angular CLI to an appropriate sample application directory.
+
+
+#### Getting started
+
+```bash
+# one-time only when cloning this repo
+npm install
+
+# each time you want to begin serving/watching sample 1 for local development
+ng serve --app 1-app-scaffolding
+
+# each time you want to test sample 1
+ng test --config ./samples/1-app-scaffolding/karma.conf.js
+
+# each time you want to build sample 1
+ng build --app 1-app-scaffolding --base-href ./
+
+# TODO: streamline documenting all the ng commands for
+# as many sample apps we will end up having
+```
+
+_TODO: update this section_
+
 Each of the implementations in the ```samples``` directory is accompanied by a README file that will walk you through the given implementation. Here is what you'll find there.
-* [1_esri_loader](https://github.com/sean-olson-esri/2018_dev_summit_arcgis_api_angular_cli/tree/master/samples/1_esri_loader) -- a simple *kick-start* implementation.
+
+* [1-app-scaffolding](https://github.com/sean-olson-esri/2018_dev_summit_arcgis_api_angular_cli/tree/master/samples/1-app-scaffolding) -- _description goes here._
+* [2-more-app-scaffolding](https://github.com/sean-olson-esri/2018_dev_summit_arcgis_api_angular_cli/tree/master/samples/2-more-app-scaffolding) -- _description goes here._
+* and so on...
 
 ### Licensing
 
