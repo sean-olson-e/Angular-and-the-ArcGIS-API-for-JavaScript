@@ -83,9 +83,9 @@
       }
     },
     {
-      "name": "4-simple-async",
-      "root": "samples/4-simple-async/src",
-      "outDir": "samples/4-simple-async/dist",
+      "name": "4-types-for-arcgis-api",
+      "root": "samples/4-types-for-arcgis-api",
+      "outDir": "samples/4-types-for-arcgis-api/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -109,9 +109,9 @@
       }
     },
     {
-      "name": "5-more-async",
-      "root": "samples/5-more-async/src",
-      "outDir": "samples/5-more-async/dist",
+      "name": "5-simple-async",
+      "root": "samples/5-simple-async/src",
+      "outDir": "samples/5-simple-async/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -135,9 +135,9 @@
       }
     },
     {
-      "name": "6-simple-map-state",
-      "root": "samples/6-simple-map-state/src",
-      "outDir": "samples/6-simple-map-state/dist",
+      "name": "6-more-async",
+      "root": "samples/6-more-async/src",
+      "outDir": "samples/6-more-async/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -161,9 +161,9 @@
       }
     },
     {
-      "name": "7-more-map-state",
-      "root": "samples/7-more-map-state/src",
-      "outDir": "samples/7-more-map-state/dist",
+      "name": "7-simple-map-state",
+      "root": "samples/7-simple-map-state/src",
+      "outDir": "samples/7-simple-map-state/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -187,9 +187,9 @@
       }
     },
     {
-      "name": "8-arcgis-api-service",
-      "root": "samples/8-arcgis-api-service/src",
-      "outDir": "samples/8-arcgis-api-service/dist",
+      "name": "8-more-map-state",
+      "root": "samples/8-more-map-state/src",
+      "outDir": "samples/8-more-map-state/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -213,9 +213,9 @@
       }
     },
     {
-      "name": "9-types-for-arcgis-api",
-      "root": "samples/9-types-for-arcgis-api/src",
-      "outDir": "samples/9-types-for-arcgis-api/dist",
+      "name": "9-arcgis-api-service",
+      "root": "samples/9-arcgis-api-service/src",
+      "outDir": "samples/9-arcgis-api-service/dist",
       "assets": [
         "assets",
         "favicon.ico"
