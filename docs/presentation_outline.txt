@@ -1,0 +1,30 @@
+**WORK IN PROGRESS**
+
+Scaffolding & Getting Started
+1. Andy & Jacob
+2. Andy & Jacob
+
+esri-loader sales pitch, Esri types
+3. Jacob
+4. Jacob
+
+Async Operations
+5. Sean
+6. Sean
+
+Managing State
+7. Sean
+8. Sean
+
+Service
+9. Sean? Andy?
+
+Ionic
+10. Andy
+
+
+SLIDES
+- Advertise Sean's Friday talk, Rene/Tom's Thursday talk
+- Assumptions: some familiarity with latest Angular 5
+- AngularJS is over at esri/angular-esri-map
+- We will be consuming JSAPI from CDN (no custom builds here)
