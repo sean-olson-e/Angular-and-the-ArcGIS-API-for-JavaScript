@@ -1,13 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "simple-map"
+    "name": "arcgis-and-ersi-loader"
   },
   "apps": [
     {
-      "name": "1-app-scaffolding",
-      "root": "samples/1-app-scaffolding/src",
-      "outDir": "samples/1-app-scaffolding/dist",
+      "root": "src",
+      "outDir": "dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -20,216 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "bootstrap.min.css",
-        "styles.css"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
-    },
-    {
-      "name": "2-more-app-scaffolding",
-      "root": "samples/2-more-app-scaffolding/src",
-      "outDir": "samples/2-more-app-scaffolding/dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "bootstrap.min.css",
-        "styles.css"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
-    },
-    {
-      "name": "3-the-esri-loader",
-      "root": "samples/3-the-esri-loader/src",
-      "outDir": "samples/3-the-esri-loader/dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "bootstrap.min.css",
-        "styles.css"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
-    },
-    {
-      "name": "4-types-for-arcgis-api",
-      "root": "samples/4-types-for-arcgis-api",
-      "outDir": "samples/4-types-for-arcgis-api/dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "bootstrap.min.css",
-        "styles.css"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
-    },
-    {
-      "name": "5-simple-async",
-      "root": "samples/5-simple-async/src",
-      "outDir": "samples/5-simple-async/dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "bootstrap.min.css",
-        "styles.css"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
-    },
-    {
-      "name": "6-more-async",
-      "root": "samples/6-more-async/src",
-      "outDir": "samples/6-more-async/dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "bootstrap.min.css",
-        "styles.css"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
-    },
-    {
-      "name": "7-simple-map-state",
-      "root": "samples/7-simple-map-state/src",
-      "outDir": "samples/7-simple-map-state/dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "bootstrap.min.css",
-        "styles.css"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
-    },
-    {
-      "name": "8-more-map-state",
-      "root": "samples/8-more-map-state/src",
-      "outDir": "samples/8-more-map-state/dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "bootstrap.min.css",
-        "styles.css"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
-    },
-    {
-      "name": "9-arcgis-api-service",
-      "root": "samples/9-arcgis-api-service/src",
-      "outDir": "samples/9-arcgis-api-service/dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "bootstrap.min.css",
-        "styles.css"
+        "styles.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -241,7 +32,7 @@
   ],
   "e2e": {
     "protractor": {
-      "config": "protractor.conf.js"
+      "config": "./protractor.conf.js"
     }
   },
   "lint": [
@@ -260,7 +51,7 @@
   ],
   "test": {
     "karma": {
-      "config": "karma.conf.js"
+      "config": "./karma.conf.js"
     }
   },
   "defaults": {
