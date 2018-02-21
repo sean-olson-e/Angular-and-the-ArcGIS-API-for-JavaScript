@@ -23,10 +23,14 @@
 	</script>
 
 	<style>
-		.custom-override img {
+		.custom-css-class img {
 			border: none !important;
 			background: none !important;
 			box-shadow: none !important;
+		}
+
+		.custom-css-class pre {
+			width: 70%;
 		}
 
 	</style>
@@ -66,7 +70,7 @@
 				</p>
 			</section>
 
-			<section data-markdown data-background="img/bg-2.png" class="custom-override">
+			<section data-markdown data-background="img/bg-2.png" data-state="custom-css-class">
 				<textarea data-template>
 					## [Angular](https://angular.io) + [Esri JSAPI](https://js.arcgis.com)
 
@@ -76,7 +80,7 @@
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-3.png" class="custom-override">
+			<section data-markdown data-background="img/bg-3.png" data-state="custom-css-class">
 				<textarea data-template>
 					## Angular?
 			
@@ -86,7 +90,7 @@
 
 					---
 
-					Not "AngularJS", also known as "Angular v1".
+					_Not "AngularJS", "Angular v1", "Angular.js", etc._
 
 					![angularjs logo](img/AngularJS-large.png)
 
@@ -94,9 +98,9 @@
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-4.png">
+			<section data-markdown data-background="img/bg-4.png" id="presentations-this-week">
 				<textarea data-template>
-					## Upcoming Presentations on Frameworks
+					## Upcoming, related presentations
 			
 					1. **[Using Frameworks with the ArcGIS API for JavaScript](https://devsummit2018.schedule.esri.com/schedule/1224212752)**
 					  - Thursday, March 08 at 2:30pm, Primrose A
@@ -110,29 +114,34 @@
 
 			<section data-markdown data-background="img/bg-5.png">
 				<textarea data-template>
-					## What are we doing here?
+					## What's the plan?
 			
-					* Code walkthroughs of sample Angular apps
+					* Walking through code of demo Angular apps
 
-					* Consuming the Esri JSAPI from CDN
-						* Custom builds not discussed here
+					* Learning how to use Esri JSAPI _inside of_ Angular apps
+					
+					* Consuming Esri JSAPI from CDN
+						
+						* (custom builds not discussed here)
 						
 					* Assuming some familiarity with Angular 2+
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-6.png">
+			<section data-markdown data-background="img/bg-6.png" data-state="custom-css-class">
 				<textarea data-template>
-					## Getting Started
+					## Getting started
 
-					https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript
+					1. Download https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript
+
+					2. Run awesome node/npm commands
 			
 					```bash
-					# one-time only when cloning this repo
+					# ONLY ONCE when cloning this repo
 					npm install -g @angular/cli
 					npm install
 
-					# each time you want to begin serving/watching sample 1 for local development
+					# each time you want to serve/watch sample 1 for local dev
 					ng serve --app 1-app-scaffolding
 
 					# begin serving/watching sample 2
@@ -226,7 +235,23 @@
 				</textarea>
 			</section>
 
-			<section data-background="img/bg-9.png" data-background-size="cover" style="padding-left: 28%;">
+			<section data-markdown data-background="img/bg-9.png">
+				<textarea data-template>
+					## Resources
+
+					* https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript
+			
+					* [Related presentations this week](#/presentations-this-week)
+
+					* ["Esri/esri-loader"](https://github.com/Esri/esri-loader) is your new friend
+
+					* Tom Wayson's blog: ["Loader of the Things: One Library to Load Them All"](http://tomwayson.com/2018/01/05/loader-of-the-things-one-library-to-load-them-all/)
+
+					* And more Angular info at ["Esri/jsapi-resources"](https://github.com/Esri/jsapi-resources/tree/master/frameworks/angular)
+				</textarea>
+			</section>
+
+			<section data-background="img/bg-2.png" data-background-size="cover" style="padding-left: 28%;">
 				<h1 style="text-align: left; font-size: 80px;">
 					Thank you
 				</h1>
