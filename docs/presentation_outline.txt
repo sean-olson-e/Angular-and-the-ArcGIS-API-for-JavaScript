@@ -21,8 +21,3 @@ Service
 
 Ionic
 10. Andy
-
-
-SLIDE IDEAS
-- Assumptions: some familiarity with latest Angular 5
-- We will be consuming JSAPI from CDN (no custom builds here)
