@@ -6,8 +6,8 @@
   "apps": [
     {
       "name": "1-app-scaffolding",
-      "root": "samples/1-app-scaffolding/src",
-      "outDir": "samples/1-app-scaffolding/dist",
+      "root": "apps/1-app-scaffolding/src",
+      "outDir": "apps/1-app-scaffolding/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -32,8 +32,8 @@
     },
     {
       "name": "2-more-app-scaffolding",
-      "root": "samples/2-more-app-scaffolding/src",
-      "outDir": "samples/2-more-app-scaffolding/dist",
+      "root": "apps/2-more-app-scaffolding/src",
+      "outDir": "apps/2-more-app-scaffolding/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -58,8 +58,8 @@
     },
     {
       "name": "3-the-esri-loader",
-      "root": "samples/3-the-esri-loader/src",
-      "outDir": "samples/3-the-esri-loader/dist",
+      "root": "apps/3-the-esri-loader/src",
+      "outDir": "apps/3-the-esri-loader/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -84,8 +84,8 @@
     },
     {
       "name": "4-types-for-arcgis-api",
-      "root": "samples/4-types-for-arcgis-api",
-      "outDir": "samples/4-types-for-arcgis-api/dist",
+      "root": "apps/4-types-for-arcgis-api",
+      "outDir": "apps/4-types-for-arcgis-api/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -110,8 +110,8 @@
     },
     {
       "name": "5-simple-async",
-      "root": "samples/5-simple-async/src",
-      "outDir": "samples/5-simple-async/dist",
+      "root": "apps/5-simple-async/src",
+      "outDir": "apps/5-simple-async/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -136,8 +136,8 @@
     },
     {
       "name": "6-more-async",
-      "root": "samples/6-more-async/src",
-      "outDir": "samples/6-more-async/dist",
+      "root": "apps/6-more-async/src",
+      "outDir": "apps/6-more-async/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -162,8 +162,8 @@
     },
     {
       "name": "7-simple-map-state",
-      "root": "samples/7-simple-map-state/src",
-      "outDir": "samples/7-simple-map-state/dist",
+      "root": "apps/7-simple-map-state/src",
+      "outDir": "apps/7-simple-map-state/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -188,8 +188,8 @@
     },
     {
       "name": "8-more-map-state",
-      "root": "samples/8-more-map-state/src",
-      "outDir": "samples/8-more-map-state/dist",
+      "root": "apps/8-more-map-state/src",
+      "outDir": "apps/8-more-map-state/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -214,8 +214,8 @@
     },
     {
       "name": "9-arcgis-api-service",
-      "root": "samples/9-arcgis-api-service/src",
-      "outDir": "samples/9-arcgis-api-service/dist",
+      "root": "apps/9-arcgis-api-service/src",
+      "outDir": "apps/9-arcgis-api-service/dist",
       "assets": [
         "assets",
         "favicon.ico"
