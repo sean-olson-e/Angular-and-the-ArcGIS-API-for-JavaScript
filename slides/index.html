@@ -23,14 +23,10 @@
 	</script>
 
 	<style>
-		.custom-css-class img {
+		.intro-css img {
 			border: none !important;
 			background: none !important;
 			box-shadow: none !important;
-		}
-
-		.custom-css-class pre {
-			width: 70%;
 		}
 
 	</style>
@@ -70,7 +66,7 @@
 				</p>
 			</section>
 
-			<section data-markdown data-background="img/bg-2.png" data-state="custom-css-class">
+			<section data-markdown data-background="img/bg-2.png" data-state="intro-css">
 				<textarea data-template>
 					## [Angular](https://angular.io) + [Esri JSAPI](https://js.arcgis.com)
 
@@ -80,11 +76,9 @@
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-3.png" data-state="custom-css-class">
+			<section data-markdown data-background="img/bg-3.png" data-state="intro-css">
 				<textarea data-template>
-					## Angular?
-			
-					Yes. Angular.
+					## Angular?	Yes. Angular.
 
 					![angular logo](img/angular.png)
 
@@ -92,9 +86,9 @@
 
 					_Not "AngularJS", "Angular v1", "Angular.js", etc._
 
-					![angularjs logo](img/AngularJS-large.png)
-
 					https://github.com/Esri/angular-esri-map
+
+					![angularjs logo](img/AngularJS-large.png)
 				</textarea>
 			</section>
 
@@ -103,55 +97,46 @@
 					## Upcoming, related presentations
 			
 					1. **[Using Frameworks with the ArcGIS API for JavaScript](https://devsummit2018.schedule.esri.com/schedule/1224212752)**
-					  - Thursday, March 08 at 2:30pm, Primrose A
-					  - Rene Rubalcava and Tom Wayson
+						
+						- Thursday, March 08 at 2:30pm, Primrose A
+						
+						- Rene Rubalcava and Tom Wayson
 
 					2. **[Kick Starter: Rapid Application Development using Angular CLI](https://devsummit2018.schedule.esri.com/schedule/433914485)**
-					  - Friday, March 09 at 8:30am, Pasadena/Sierra/Ventura
-					  - Sean Olson
+						
+						- Friday, March 09 at 8:30am, Pasadena/Sierra/Ventura
+						
+						- Sean Olson
 				</textarea>
 			</section>
 
 			<section data-markdown data-background="img/bg-5.png">
 				<textarea data-template>
-					## What's the plan?
+					## What's the plan today?
 			
-					* Walking through code of demo Angular apps
+					### Assuming some familiarity with Angular 2+:
 
-					* Learning how to use Esri JSAPI _inside of_ Angular apps
+					* Walk through sample Angular apps
+
+					* Learn how to use Esri JSAPI _inside of_ Angular apps
 					
-					* Consuming Esri JSAPI from CDN
-						
-						* (custom builds not discussed here)
-						
-					* Assuming some familiarity with Angular 2+
+					* Consume Esri JSAPI from CDN
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-6.png" data-state="custom-css-class">
+			<section data-markdown data-background="img/bg-6.png" data-state="into-css">
 				<textarea data-template>
 					## Getting started
 
 					1. Download https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript
 
-					2. Run awesome node/npm commands
-			
-					```bash
-					# ONLY ONCE when cloning this repo
-					npm install -g @angular/cli
-					npm install
+					2. Follow along as we work with Angular sample apps
 
-					# each time you want to serve/watch sample 1 for local dev
-					ng serve --app 1-app-scaffolding
-
-					# begin serving/watching sample 2
-					ng serve --app 2-more-app-scaffolding
-
-					# begin serving/watching sample 3
-					ng serve --app 3-the-esri-loader
-
-					# and so on...
-					```
+						- ./sample_apps/1-app-scaffolding
+						
+						- ./sample_apps/2-more-app-scaffolding
+						
+						- ...and more...
 				</textarea>
 			</section>
 
@@ -194,7 +179,7 @@
 					* Bullet [points here](http://hakim.se).
 				</textarea>
 			</section>
-			
+
 			<section data-markdown data-background="img/bg-4.png">
 				<textarea data-template>
 					## 6-more-async
@@ -237,12 +222,36 @@
 
 			<section data-markdown data-background="img/bg-9.png">
 				<textarea data-template>
-					## Resources
+					## Where to get help: Esri JSAPI
+					
+					- https://js.arcgis.com
+
+					- [GeoNet: ArcGIS API for JavaScript Community](https://community.esri.com/community/developers/web-developers/arcgis-api-for-javascript)
+
+					- [GIS Stack Exchange](https://gis.stackexchange.com/)
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-9.png">
+				<textarea data-template>
+					## Where to get help: esri-loader
+
+					- [README](https://github.com/Esri/esri-loader/blob/master/README.md)
+
+					- New Github issue?
+
+					  ![issue template screenshot](img/issue-template.png)
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-9.png">
+				<textarea data-template>
+					## Additional resources
+
+					* https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript
 
 					* https://github.com/Esri/angular-cli-esri-map
 
-					* https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript
-			
 					* [Related presentations this week](#/presentations-this-week)
 
 					* ["Esri/esri-loader"](https://github.com/Esri/esri-loader) is your new friend
