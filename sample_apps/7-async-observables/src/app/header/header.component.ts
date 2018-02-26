@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  header = 'Esri Dev Summit 2018: Implementing ArcGIS API for JavaScript and Angular CLI';
-  header_tag = 'Managing Map State with Services: click map to set point graphics persisted in map state';
+  header = 'Esri Dev Summit 2018: Async Operations Using the Angular Event Emitter';
+  header_tag = 'Select a world wonder.  The selector is then disabled while the map pans to your selection. ' +
+               ' Once complete, the map component emits an event and the dashboard selctor is enabled again';
 
   constructor() { }
 
