@@ -1,13 +1,7 @@
 <div class="container">
   <div class="row eds-header">
     <div class="col-4">
-        <h5>Select a World Wonder</h5>
-        <select name="wonders" id="wonders" (input)="selectedWonder($event)" [disabled]="selectorDisabled">
-          <option value="" selected>-----</option>
-          <option *ngFor="let w of sevenWonders; let i = index;" value={{i}}>{{w.name}}</option>
-        </select>
-
-      <p>{{feedback}}</p>
+      <app-control-panel></app-control-panel>
     </div>
     <div class="col-8">
         <app-esri-map (wonderMapped)="enablePanel()"></app-esri-map>

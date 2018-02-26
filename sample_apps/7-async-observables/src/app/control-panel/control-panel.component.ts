@@ -1,14 +1,12 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { EsriMapComponent } from '../esri-map/esri-map.component';
+import { Component, OnInit } from '@angular/core';
+import { EsriMapService } from '../services/esri-map.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-control-panel',
+  templateUrl: './control-panel.component.html',
+  styleUrls: ['./control-panel.component.css']
 })
-export class DashboardComponent implements OnInit {
-
-  @ViewChild(EsriMapComponent) map: EsriMapComponent; // needed to reference the child map component
+export class ControlPanelComponent implements OnInit {
 
   sevenWonders = [
     {id: 0, name: 'Great Wall of China', coordinates: [117.23, 40.68]},
@@ -32,30 +30,25 @@ export class DashboardComponent implements OnInit {
     // disable the panel
     this.disablePanel(this.sevenWonders[ev.target.value].name);
 
-    // call the panMap method of the child map component
-    this.map.panMap(this.sevenWonders[ev.target.value].coordinates)
-    .then(() => {
-      this.enablePanel();
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    // // call the panMap method of the child map component
+    // this.map.panMap(this.sevenWonders[ev.target.value].coordinates);
 
   }
 
   disablePanel = (name) => {
     this.selectorDisabled = true;
-    this.feedback = 'SELECTOR DISABLED: Waiting for map to pan to ' + name + '.  Once completed, the ' +
-                     'map component will resolve the primise it returned to the dashboard component.';
+    this.feedback = 'SELECTOR DISABLED: Waiting for map to pan to ' + name + ' and then fire the ' +
+                     'wonderMapped event, notifying the dashboard component that the process ' +
+                     'is complete.';
   }
 
   enablePanel = () => {
     this.selectorDisabled = false;
     this.feedback = 'Done!';
     setTimeout(() => { this.feedback = ''; }, 1000);
-  };
+  }
 
-  constructor() { }
+  constructor(private mapService: EsriMapService) { }
 
   ngOnInit() {
   }
