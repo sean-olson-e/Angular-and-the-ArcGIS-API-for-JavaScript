@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('arcgis-and-ersi-loader App', () => {
+describe('esri-app App', () => {
   let page: AppPage;
 
   beforeEach(() => {

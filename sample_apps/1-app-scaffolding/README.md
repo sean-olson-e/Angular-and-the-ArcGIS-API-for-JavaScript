@@ -1,8 +1,30 @@
 # App Scaffolding
 
-This sample will provides a boilerplate for standing up an Angular app that implements the ArcGIS API for JavaScript.  We leverage the Angular CLI and the [esri_loader](https://github.com/Esri/esri-loader).
+This sample provides a boilerplate for standing up an Angular app that implements the ArcGIS API for JavaScript.  We leverage the Angular CLI and the [esri-loader](https://github.com/Esri/esri-loader).
 
-## Background
+## Overview
+
+- Quick start:
+
+  ```bash
+  npm install
+  ng serve
+  # or: ng build --base-href ./
+  ```
+
+- Building blocks:
+
+  - Angular CLI
+
+  - "esri-loader"
+
+  - custom demo `esri-map.component.ts`
+
+  - custom demo `esri-map.component.html`
+
+  - custom demo `esri-map.component.css`
+
+## Background info on this sample code
 
 This sample app was created following the instructions here: https://github.com/Esri/angular-cli-esri-map.
 
@@ -22,10 +44,6 @@ Please spend some time getting comfortable with those instructions.
 
 6. Add `<app-esri-map></app-esri-map>` to `app.component.html` file
 
+7. `ng serve` or `ng build --base-href ./`
+
 *_"too long; didn't read"_
-
-## Overview
-
-- sample-specific bullet points here
-
-- sample-specific bullet points here

@@ -1,5 +1,5 @@
 {
-  "name": "arcgis-and-ersi-loader",
+  "name": "esri-app",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -22,7 +22,6 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "@types/arcgis-js-api": "^4.6.0",
-    "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "esri-loader": "^2.2.0",
     "rxjs": "^5.5.6",
