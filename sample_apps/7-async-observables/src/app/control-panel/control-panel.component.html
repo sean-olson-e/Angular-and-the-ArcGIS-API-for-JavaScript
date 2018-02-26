@@ -1,0 +1,7 @@
+<h5>Select a World Wonder</h5>
+<select name="wonders" id="wonders" (input)="selectedWonder($event)" [disabled]="selectorDisabled">
+  <option value="" selected>-----</option>
+  <option *ngFor="let w of sevenWonders; let i = index;" value={{i}}>{{w.name}}</option>
+</select>
+
+<p>{{feedback}}</p>
