@@ -8,18 +8,10 @@ import { EsriMapService } from '../services/esri-map.service';
 })
 export class ControlPanelComponent implements OnInit {
 
-  sevenWonders = [
-    {id: 0, name: 'Great Wall of China', coordinates: [117.23, 40.68]},
-    {id: 1, name: 'Petra', coordinates: [35.44194444, 30.32861111]},
-    {id: 2, name: 'Christ the Redeemer', coordinates: [-43.210556, -22.951944]},
-    {id: 3, name: 'Machu Picchu', coordinates: [-72.545556, -13.163333]},
-    {id: 4, name: 'Chichen Itza', coordinates: [-88.568611, 20.683056]},
-    {id: 5, name: 'Colosseum', coordinates: [12.492269, 41.890169]},
-    {id: 6, name: 'Taj Mahal', coordinates: [78.041944, 27.175]},
-  ];
-
   feedback;
   selectorDisabled = false;
+  sevenWonders = this.mapService.sevenWonders;
+  panCompleteSubscription: any;
 
   selectedWonder = (ev) => {
     // verify that a wonder is selected
@@ -31,15 +23,13 @@ export class ControlPanelComponent implements OnInit {
     this.disablePanel(this.sevenWonders[ev.target.value].name);
 
     // // call the panMap method of the child map component
-    // this.map.panMap(this.sevenWonders[ev.target.value].coordinates);
+    this.mapService.panToWonder(this.sevenWonders[ev.target.value].coordinates);
 
   }
 
   disablePanel = (name) => {
     this.selectorDisabled = true;
-    this.feedback = 'SELECTOR DISABLED: Waiting for map to pan to ' + name + ' and then fire the ' +
-                     'wonderMapped event, notifying the dashboard component that the process ' +
-                     'is complete.';
+    this.feedback = 'Panning to ' + name + '.';
   }
 
   enablePanel = () => {
@@ -51,6 +41,9 @@ export class ControlPanelComponent implements OnInit {
   constructor(private mapService: EsriMapService) { }
 
   ngOnInit() {
+    this.panCompleteSubscription = this.mapService.panComplete.subscribe(() => {
+      this.enablePanel();
+    });
   }
 
 }

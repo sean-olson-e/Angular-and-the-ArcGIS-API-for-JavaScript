@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  header = 'Esri Dev Summit 2018: Async Operations Using the Angular Event Emitter';
+  header = 'Esri Dev Summit 2018: Async Operations Using RxJS Observables';
   header_tag = 'Select a world wonder.  The selector is then disabled while the map pans to your selection. ' +
-               ' Once complete, the map component emits an event and the dashboard selctor is enabled again';
+               ' Once complete, the map component notidies the service.  The service in turn then notifies ' +
+               'all subscribed observers that the map is finished panning.';
 
   constructor() { }
 

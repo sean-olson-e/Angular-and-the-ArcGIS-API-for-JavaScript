@@ -1,32 +1,36 @@
-import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { loadModules } from 'esri-loader';
+import { EsriMapService } from '../services/esri-map.service';
 
 @Component({
   selector: 'app-esri-map',
   templateUrl: './esri-map.component.html',
   styleUrls: ['./esri-map.component.css']
 })
-
 export class EsriMapComponent implements OnInit {
 
-  @Output() wonderMapped = new EventEmitter(); // notfies the dashboard component when the mapp is finished
   @ViewChild('mapViewNode') private viewNode: ElementRef; // needed to inject the MapView into the DOM
   mapView: __esri.MapView;
+  panRequestSubscription: any;
 
-  constructor() {
-  }
+  constructor(private mapService: EsriMapService) {}
 
   panMap = (coordinates) => {
     this.mapView.goTo(coordinates)
     .then(() => {
       this.mapView.zoom = 18;
       setTimeout(() => {
-        this.wonderMapped.emit();
+        this.mapService.panToWonderComplete();
       }, 2000);
     });
   }
 
   public ngOnInit() {
+
+    this.panRequestSubscription = this.mapService.panRequest.subscribe(() => {
+      this.panMap(this.mapService.wonderCoordinates);
+    });
+
     // use esri-loader to load JSAPI modules
     return loadModules([
       'esri/Map',
