@@ -45,8 +45,7 @@ export class DashboardComponent implements OnInit {
 
   disablePanel = (name) => {
     this.selectorDisabled = true;
-    this.feedback = 'SELECTOR DISABLED: Waiting for map to pan to ' + name + '.  Once completed, the ' +
-                     'map component will resolve the primise it returned to the dashboard component.';
+    this.feedback = this.feedback = 'Panning to ' + name + '.';
   }
 
   enablePanel = () => {
