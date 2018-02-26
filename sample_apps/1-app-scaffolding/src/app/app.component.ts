@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ArcGIS API for JavaScript with Angular: App Scaffolding';
+  title = 'app';
 }
