@@ -1,43 +1,91 @@
-# The Esri Loader 
+# The esri-loader
 
-About this sample
+This sample provides a boilerplate for standing up an Angular app that implements the ArcGIS API for JavaScript.  We leverage the Angular CLI and the [esri-loader](https://github.com/Esri/esri-loader).
 
-## Implementing the ArcGIS API for JavaScript
+## Overview
 
-Using the ArcGIS API for JavaScript in an Angular applciation requires these dependencies: 
+- The glue that holds everything together is ["Esri/esri-loader"](https://github.com/Esri/esri-loader).
 
-* [Angular Devkit](https://github.com/angular/devkit) Development tools and libraries specialized for Angular
-* [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
-* [`esri-loader`](https://github.com/Esri/esri-loader) A library that helps load the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) into non-Dojo applications.
-* [`arcgis-js-api.d.ts`](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript) Esri TypeScript type definitions
+  - > "A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications"
 
-### 1. Install `esri-loader`, Esri TypeScript types, and Angular Devkit
+  ```ts
+  /*
+    ANGULAR GALAXY AND COLD VACUUM OF SPACE OUT HERE!
+  */
 
-```
-  npm install --save esri-loader
-  npm install --save @types/arcgis-js-api
-  npm install --save @angular-devkit/core
-```
+  import { loadModules } from 'esri-loader';
 
-### 2. Inlcude the TypeScript definitions in the TypeScript application config files:
-* Add `"types": ["arcgis-js-api"]` to `tsconfig.app.json`
+  // ... later in your Angular component code ...
 
-* Add  `"types": ["arcgis-js-api"]` to `tsconfig.spec.json`
+  loadModules([
+    'esri/Map',
+    'esri/views/MapView',
+    'esri/layers/FeatureLayer',
+    'esri/Graphic'
+    // ... and any other Esri modules you might need
+  ]).then(([
+    EsriMap,
+    EsriMapView,
+    FeatureLayer,
+    Graphic
+  ]) => {
+    /*
+      ESRI PLANET WITH ATMOSPHERE RIGHT INSIDE HERE!
+    */
 
-[`esri-loader`](https://github.com/Esri/esri-loader#usage) is a low level service needed to load and use ArcGIS modules (v3.x or v4.x) in non-Dojo applications.
+    // for example you could construct a simple MapView
+    // or recreate any demo from https://js.arcgis.com
+  });
 
-And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript).
+  /*
+    ANGULAR GALAXY AND COLD VACUUM OF SPACE OUT HERE!
+  */
+  ```
 
+- This brings Esri **WITHIN** Angular
 
+- Which ultimately means Dojo **INSIDE OF** Angular
 
-# Licensing
+- How?
 
-Copyright 2017 Esri
+  - ES/TS module with `loadModulues` method that you `import` as needed.
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+  - It dynamically injects an ArcGIS for JavaScript API `<script>` tag onto the page.
 
-[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+  - You tell `loadModules` which Esri modules you want, à la carte.
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+- Why?
 
-A copy of the license is available in the repository's license.txt file.
+  - > The only reliable way to load ArcGIS API for JavaScript modules is using Dojo's AMD loader.
+
+  - You benefit from getting to:
+
+    - use Angular tooling
+
+    - improve initial app load performance
+
+    - control exactly when to load and use Esri modules
+
+## Background info on this sample code
+
+This sample app was created following the instructions here: https://github.com/Esri/angular-cli-esri-map.
+
+Please spend some time getting comfortable with those instructions.
+
+### TL;DR*
+
+1. `ng new YOUR-APP`
+
+2. `cd YOUR-APP`
+
+3. `npm install --save esri-loader`
+
+4. `ng generate component esri-map`
+
+5. Copy and paste mapping component files from https://github.com/Esri/angular-cli-esri-map
+
+6. Add `<app-esri-map></app-esri-map>` to `app.component.html` file
+
+7. `ng serve` or `ng build --base-href ./`
+
+*_"too long; didn't read"_

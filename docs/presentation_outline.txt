@@ -1,7 +1,7 @@
 **WORK IN PROGRESS**
 
 Scaffolding & Getting Started
-1. Jacob?
+1. Jacob
 2. Andy
 
 esri-loader sales pitch, Esri types
@@ -17,7 +17,7 @@ Managing State
 8. Sean
 
 Service
-9. Sean? Andy?
+9. Sean
 
 Ionic
 10. Andy

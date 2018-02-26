@@ -1,42 +1,59 @@
-# Using the ArcGIS API for JavaScript Types
+# Types for ArcGIS API
 
-About this sample   
+This sample provides a boilerplate for standing up an Angular app that implements the ArcGIS API for JavaScript.  We leverage the Angular CLI and the [esri-loader](https://github.com/Esri/esri-loader).
 
-## Implementing the ArcGIS API for JavaScript
+## Overview
 
-Using the ArcGIS API for JavaScript in an Angular applciation requires these dependencies: 
+- [Esri provides type definitions](https://github.com/Esri/jsapi-resources/) for the ArcGIS API for JavaScript
 
-* [Angular Devkit](https://github.com/angular/devkit) Development tools and libraries specialized for Angular
-* [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
-* [`esri-loader`](https://github.com/Esri/esri-loader) A library that helps load the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) into non-Dojo applications.
-* [`arcgis-js-api.d.ts`](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript) Esri TypeScript type definitions
+- For Esri v4.x, install them with `npm install --save @types/arcgis-js-api`
 
-### 1. Install `esri-loader`, Esri TypeScript types, and Angular Devkit
+- Types are available through global `__esri` namespace **for Esri v4.x**
 
-```
-  npm install --save esri-loader
-  npm install --save @types/arcgis-js-api
-  npm install --save @angular-devkit/core
-```
+  - We recommend renaming to `esri` with `import esri = __esri;`
 
-### 2. Inlcude the TypeScript definitions in the TypeScript application config files:
-* Add `"types": ["arcgis-js-api"]` to `tsconfig.app.json`
+  ```ts
+  const map = new MapView({ /* zoom, center, etc. */ });
 
-* Add  `"types": ["arcgis-js-api"]` to `tsconfig.spec.json`
+  // versus
 
-[`esri-loader`](https://github.com/Esri/esri-loader#usage) is a low level service needed to load and use ArcGIS modules (v3.x or v4.x) in non-Dojo applications.
+  const map: esri.MapView = new MapView({ /* zoom, center, etc. */ });
+  ```
 
-And, the ArcGIS JavaScript TypeScript type definitions can be found [here](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript).
+  ```ts
+  const arrayOfGraphics = [];
+  const myGraphic = new Graphic({ /* geometry, symbol, etc. */ });
+  arrayOfGraphics.push(myGraphic)
 
+  // versus
 
-# Licensing
+  const arrayOfGraphics: esri.Graphic[] = [];
+  const myGraphic: esri.Graphic = new Graphic({ /* geometry, symbol, etc. */ });
+  arrayOfGraphics.push(myGraphic);
+  ```
 
-Copyright 2017 Esri
+- More info at https://github.com/Esri/jsapi-resources/
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+## Background info on this sample code
 
-[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+This sample app was created following the instructions here: https://github.com/Esri/angular-cli-esri-map.
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+Please spend some time getting comfortable with those instructions.
 
-A copy of the license is available in the repository's license.txt file.
+### TL;DR*
+
+1. `ng new YOUR-APP`
+
+2. `cd YOUR-APP`
+
+3. `npm install --save esri-loader` and `npm install --save @types/arcgis-js-api`
+
+4. `ng generate component esri-map`
+
+5. Copy and paste mapping component files from https://github.com/Esri/angular-cli-esri-map
+
+6. Add `<app-esri-map></app-esri-map>` to `app.component.html` file
+
+7. `ng serve` or `ng build --base-href ./`
+
+*_"too long; didn't read"_

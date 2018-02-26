@@ -1,45 +1,49 @@
 # App Scaffolding
 
-This sample will provides a boilerplate for standing up an Angular app that implements the ArcGIS API for JavaScript.  We leverage the Angular CLI and the [esri_loader](https://github.com/Esri/esri-loader)    
+This sample provides a boilerplate for standing up an Angular app that implements the ArcGIS API for JavaScript.  We leverage the Angular CLI and the [esri-loader](https://github.com/Esri/esri-loader).
 
-## Implementing the ArcGIS API for JavaScript
+## Overview
 
-Using the ArcGIS API for JavaScript in an Angular applciation requires these dependencies: 
+- Quick start:
 
-* [Angular Devkit](https://github.com/angular/devkit) Development tools and libraries specialized for Angular
-* [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/)
-* [`esri-loader`](https://github.com/Esri/esri-loader) A library that helps load the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) into non-Dojo applications.
-* [`arcgis-js-api.d.ts`](https://github.com/Esri/jsapi-resources/tree/master/4.x/typescript) Esri TypeScript type definitions
-
-### 1. Install `esri-loader`, Esri TypeScript types, and Angular Devkit
-
-```
+  ```bash
   npm install
-  npm install --save esri-loader
-  npm install --save @types/arcgis-js-api
-  npm install --save @angular-devkit/core  // optional for this sample
-  
-```
-
-### 2. Test run the app
-
-Run this command and then navigate to `http://localhost:4200`
-
-```
-
   ng serve
+  # or: ng build --base-href ./
+  ```
 
-```
+- Building blocks:
 
+  - Angular CLI
 
-# Licensing
+  - "esri-loader"
 
-Copyright 2018 Esri
+  - custom demo `esri-map.component.ts`
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+  - custom demo `esri-map.component.html`
 
-[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+  - custom demo `esri-map.component.css`
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+## Background info on this sample code
 
-A copy of the license is available in the repository's license.txt file.
+This sample app was created following the instructions here: https://github.com/Esri/angular-cli-esri-map.
+
+Please spend some time getting comfortable with those instructions.
+
+### TL;DR*
+
+1. `ng new YOUR-APP`
+
+2. `cd YOUR-APP`
+
+3. `npm install --save esri-loader`
+
+4. `ng generate component esri-map`
+
+5. Copy and paste mapping component files from https://github.com/Esri/angular-cli-esri-map
+
+6. Add `<app-esri-map></app-esri-map>` to `app.component.html` file
+
+7. `ng serve` or `ng build --base-href ./`
+
+*_"too long; didn't read"_
