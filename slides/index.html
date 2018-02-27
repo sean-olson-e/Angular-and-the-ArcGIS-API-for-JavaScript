@@ -271,9 +271,19 @@
 						npm install --save @types/arcgis-js-api
 						```
 
+						and also add to `tsconfig.app.json`.
+
+						```json
+						"types": ["arcgis-js-api"]
+						```
+
 					- Types are available through global "`__esri`" namespace for Esri v4.x
 
-						- We recommend renaming to "`esri`" with "`import esri = __esri;`"
+						- We recommend renaming to "`esri`" with
+
+						```ts
+						import esri = __esri;
+						```
 				</textarea>
 			</section>
 
@@ -284,24 +294,37 @@
 					- More info is available at https://github.com/Esri/jsapi-resources/
 
 						```ts
-						const map = new MapView({ /* zoom, center, etc. */ });
+						// without
+						const map = new EsriMap({ /* zoom, center, etc. */ });
 
-						// versus
-
-						const map: esri.MapView = new MapView({ /* zoom, center, etc. */ });
+						// with
+						const mapOptions: esri.MapProperties = {
+							basemap: 'streets'
+						};
+						const map: esri.Map = new EsriMap(mapOptions);
 						```
 
 						```ts
+						// without
 						const arrayOfGraphics = [];
 						const myGraphic = new Graphic({ /* geometry, symbol, etc. */ });
 						arrayOfGraphics.push(myGraphic)
 
-						// versus
-
+						// with
 						const arrayOfGraphics: esri.Graphic[] = [];
 						const myGraphic: esri.Graphic = new Graphic({ /* geometry, symbol, etc. */ });
 						arrayOfGraphics.push(myGraphic);
 						```
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					## 4-types-for-arcgis-api
+					
+					- Example of IntelliSense in VS Code
+
+  					![autocomplete screenshot](img/autocomplete_screenshot.png)
 				</textarea>
 			</section>
 
