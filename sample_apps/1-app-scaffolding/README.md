@@ -18,11 +18,13 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
   - "esri-loader"
 
-  - custom demo `esri-map.component.ts`
+  - custom demo files:
 
-  - custom demo `esri-map.component.html`
+    - `esri-map.component.ts`
 
-  - custom demo `esri-map.component.css`
+    - `esri-map.component.html`
+
+    - `esri-map.component.css`
 
 ## Background info on this sample code
 
