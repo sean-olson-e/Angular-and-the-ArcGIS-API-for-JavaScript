@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
 }
 ```
 #### Communicating with a Child Component
-Using the reference to the esri-map component, the event handler (selectedWonder()) is wired up to the location selector. When the user selects a location, the event handler disables the dashboard panel, calls the map’s ```panMap()``` method which returns an ES6 Promise.  Once the promise is resolved, the dashboard panel is enabled.
+Using the reference to the esri-map component, the event handler (```selectedWonder()```) is wired up to the location selector. When the user selects a location, the event handler disables the dashboard panel, calls the map’s ```panMap()``` method which returns an ES6 Promise.  Once the promise is resolved, the dashboard panel is enabled.
 
 ```
 selectedWonder = (ev) => {
