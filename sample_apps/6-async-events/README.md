@@ -3,11 +3,12 @@
 This sample app demonstrates a pattern for managing asynchronous operations using Angular Events.
 ## Overview
 This app has two key components, a dashboard containing a location selector and a map. They share a simple interaction. When the user selects a location, an event is triggered that instructs the map to pan, and the selector is disabled while the map extent is repositioned. Once repositioned, the map component notifies the dashboard, so it can enable the selector.
-In this case, the map component is a child of the dashboard component. This relationship allows the dashboard component class to hold a reference to the map component class. With that reference, the dashboard component class can directly invoke a method of the map component class. The map component in-turn defines a custom event that notifies the dashboard when the map has completed its operation, providing a mechanism for our asynchronous operation.
+
+In this case, **the map component is a child of the dashboard component**. This relationship allows the dashboard component class to hold a reference to the map component class. With that reference, the dashboard component class can directly invoke a method of the map component class. The map component in-turn defines a custom event that notifies the dashboard when the map has completed its operation, providing a mechanism for our asynchronous operation.
 
 ## The Dashboard Component
 #### Getting a Reference to a Child Component
-Getting a reference to a child-component class is done with the ```ViewChild``` module that's part of the ```@angular/core package```.  So first, import the ```ViewChild``` module along with your ```EsriMapComponent``` into the parent ```DashboardComponent``` class.
+Getting a reference to a child-component class is done with the ```ViewChild``` module that's part of the ```@angular/core package```.  So first, import the ```ViewChild``` module along with the ```EsriMapComponent``` module into the parent ```DashboardComponent``` class.
 ```
  import { Component, ViewChild, OnInit } from '@angular/core';
  import { EsriMapComponent } from '../esri-map/esri-map.component';
@@ -66,7 +67,7 @@ Next, declare a new event emitter, using the ```@Output``` decorator
   @Output() wonderMapped = new EventEmitter();
 ```
 
-Then from within the esri-map component class's ```panMap()``` method, call the emit() method of the custom event when the map extent is repositioned.
+Then from within the esri-map component class's ```panMap()``` method, call the ```emit()``` method of the custom event when the map extent is repositioned.
 
 
 ```
