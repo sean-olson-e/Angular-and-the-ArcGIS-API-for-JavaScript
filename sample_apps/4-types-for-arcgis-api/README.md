@@ -6,54 +6,57 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
 - [Esri provides type definitions](https://github.com/Esri/jsapi-resources/) for the ArcGIS API for JavaScript
 
-- For Esri v4.x, install them with `npm install --save @types/arcgis-js-api`
+- For Esri v4.x, install them with
 
-- Types are available through global `__esri` namespace **for Esri v4.x**
+  ```bash
+  npm install --save @types/arcgis-js-api
+  ```
 
-  - We recommend renaming to `esri` with `import esri = __esri;`
+  and also add to `tsconfig.app.json`.
+
+  ```json
+  "types": ["arcgis-js-api"]
+  ```
+
+- Types are available through global "`__esri`" namespace for Esri v4.x
+
+  - We recommend renaming to "`esri`" with
 
   ```ts
-  const map = new MapView({ /* zoom, center, etc. */ });
+  import esri = __esri;
+  ```
 
-  // versus
+- More info is available at https://github.com/Esri/jsapi-resources/
 
-  const map: esri.MapView = new MapView({ /* zoom, center, etc. */ });
+  ```ts
+  // without
+  const map = new EsriMap({ /* zoom, center, etc. */ });
+
+  // with
+  const mapOptions: esri.MapProperties = {
+    basemap: 'streets'
+  };
+  const map: esri.Map = new EsriMap(mapOptions);
   ```
 
   ```ts
+  // without
   const arrayOfGraphics = [];
   const myGraphic = new Graphic({ /* geometry, symbol, etc. */ });
   arrayOfGraphics.push(myGraphic)
 
-  // versus
-
+  // with
   const arrayOfGraphics: esri.Graphic[] = [];
   const myGraphic: esri.Graphic = new Graphic({ /* geometry, symbol, etc. */ });
   arrayOfGraphics.push(myGraphic);
   ```
 
-- More info at https://github.com/Esri/jsapi-resources/
+- Example of IntelliSense in VS Code
+
+  ![autocomplete screenshot](autocomplete_screenshot.png)
 
 ## Background info on this sample code
 
 This sample app was created following the instructions here: https://github.com/Esri/angular-cli-esri-map.
 
 Please spend some time getting comfortable with those instructions.
-
-### TL;DR*
-
-1. `ng new YOUR-APP`
-
-2. `cd YOUR-APP`
-
-3. `npm install --save esri-loader` and `npm install --save @types/arcgis-js-api`
-
-4. `ng generate component esri-map`
-
-5. Copy and paste mapping component files from https://github.com/Esri/angular-cli-esri-map
-
-6. Add `<app-esri-map></app-esri-map>` to `app.component.html` file
-
-7. `ng serve` or `ng build --base-href ./`
-
-*_"too long; didn't read"_
