@@ -56,7 +56,7 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
 - Why?
 
-  > The only reliable way to load ArcGIS API for JavaScript modules is using Dojo's AMD loader.
+  > "The only reliable way to load ArcGIS API for JavaScript modules is using Dojo's AMD loader."
 
 - You benefit from getting to:
 
