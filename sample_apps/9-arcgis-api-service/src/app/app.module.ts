@@ -1,34 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { EsriMapComponent } from './esri-map/esri-map.component';
-import { HeaderComponent } from './header/header.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { EsriMapService} from './esri-map/esri-map.service';
 
-import { MapStateService } from './services/map-state.service';
-
-const routes = [
-  { path: 'map', component: EsriMapComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '**', redirectTo: '/map' }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-    EsriMapComponent,
-    HeaderComponent,
-    NavigationComponent,
-    DashboardComponent
+    EsriMapComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes)
+    BrowserModule
   ],
-  providers: [MapStateService],
+  providers: [EsriMapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
