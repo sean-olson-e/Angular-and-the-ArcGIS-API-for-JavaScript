@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { EsriMapComponent } from './esri-map/esri-map.component';
+import { EsriMapService} from './esri-map/esri-map.service';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { EsriMapComponent } from './esri-map/esri-map.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [EsriMapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
