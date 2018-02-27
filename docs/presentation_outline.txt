@@ -11,13 +11,13 @@ esri-loader sales pitch, Esri types
 Async Operations
 5. Sean
 6. Sean
+7. Sean
 
 Managing State
-7. Sean
 8. Sean
 
 Service
-9. Sean
+9. ?
 
 Ionic
 10. Andy
