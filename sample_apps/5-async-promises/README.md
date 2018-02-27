@@ -1,6 +1,6 @@
 # Managing Asynchronous Operations using Promises
 
-This sample app demonstrates a method of managing asynchronous operations.  In this scenario, two Angular components need link functionality.  The dashboard component instructs the map component to pan.  The map component, in turn, pans and notifies the dashboard component when the pan operation is complete. In this instance an ES6 Promise is used.
+This sample app demonstrates a pattern for managing asynchronous operations using ES6 Promises. 
 ## Overview
 This app has two key components, a dashboard containing a location selector and a map, and they share a simple interaction.  When the user selects a location, an event is triggered that instructs the map to pan and the selector is disabled while the map extent is repositioned. Once repositioned, the map component notifies the dashboard, so it can enable the selector. 
 
@@ -8,12 +8,12 @@ In this case, the map component is a child of the dashboard component.  This rel
 
 ## The Dashboard Component
 #### Getting a Reference to a Child Component
-Getting a reference to a child-component class is done with the ViewChild module that’s part of the @angular/core package.  So, the first step is to import it into parent component class, in this case the dashboard, along with the child component.
+Getting a reference to a child-component class is done with the ```ViewChild``` module that’s part of the @angular/core package.  So, the first step is to import it into parent component class, in this case the dashboard, along with the child component.
 ```
  import { Component, ViewChild, OnInit } from '@angular/core';
  import { EsriMapComponent } from '../esri-map/esri-map.component';
 ```
-With the ViewChild and EsriMapComponent modules loaded into the dashboard component class, we can declare a variable, map, using the @ViewChild decorator.  This variable will provide a reference to the esri-map component class.  
+With the ```ViewChild``` and ```EsriMapComponent``` modules loaded into the dashboard component class, we can declare a variable, map, using the @ViewChild decorator.  This variable will provide a reference to the esri-map component class.  
 
 ```
 export class DashboardComponent implements OnInit {
@@ -57,9 +57,9 @@ The esri-map component class exposes a method, panMap, that returns a promise to
 ```
 ### TL;DR*
 
-1. Import the ViewChild and child modules into the parent component class.
+1. Import the ```ViewChild``` and child class modules into the parent component class.
 2. Create an instance variable of the child class.
-3. Invoke a method in the child component class that will return a promise.
+3. From the parent component class, invoke a method in the child component class that will return a promise.
 4. When ready, resolve the promise in the child class.
 5. When the parent class’s promise is resolved, continue operation 
 
