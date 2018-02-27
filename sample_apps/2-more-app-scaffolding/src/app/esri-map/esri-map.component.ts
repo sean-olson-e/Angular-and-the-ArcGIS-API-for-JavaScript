@@ -13,7 +13,6 @@
 
 import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { loadModules } from 'esri-loader';
-import esri = __esri;
 
 @Component({
   selector: 'app-esri-map',
@@ -68,11 +67,12 @@ export class EsriMapComponent implements OnInit {
       'esri/views/MapView'
     ])
       .then(([EsriMap, EsriMapView]) => {
-        let map: esri.Map = new EsriMap({
+
+        let map = new EsriMap({
           basemap: this._basemap
         });
 
-        let mapView: esri.MapView = new EsriMapView({
+        let mapView = new EsriMapView({
           container: this.mapViewEl.nativeElement,
           center: this._center,
           zoom: this._zoom,
