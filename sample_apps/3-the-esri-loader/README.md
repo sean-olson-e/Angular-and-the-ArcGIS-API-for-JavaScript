@@ -6,7 +6,7 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
 - The glue that holds everything together is ["Esri/esri-loader"](https://github.com/Esri/esri-loader).
 
-  - > "A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications"
+  > "A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications"
 
   ```ts
   /*
@@ -30,7 +30,7 @@ This sample provides a boilerplate for standing up an Angular app that implement
     Graphic
   ]) => {
     /*
-      ESRI PLANET WITH ATMOSPHERE RIGHT INSIDE HERE!
+      ESRI PLANET WITH ATMOSPHERE INSIDE HERE!
     */
 
     // for example you could construct a simple MapView
@@ -56,15 +56,15 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
 - Why?
 
-  - > The only reliable way to load ArcGIS API for JavaScript modules is using Dojo's AMD loader.
+  > The only reliable way to load ArcGIS API for JavaScript modules is using Dojo's AMD loader.
 
-  - You benefit from getting to:
+- You benefit from getting to:
 
-    - use Angular tooling
+  - use Angular tooling
 
-    - improve initial app load performance
+  - improve initial app load performance
 
-    - control exactly when to load and use Esri modules
+  - control exactly when to load and use Esri modules
 
 ## Background info on this sample code
 
