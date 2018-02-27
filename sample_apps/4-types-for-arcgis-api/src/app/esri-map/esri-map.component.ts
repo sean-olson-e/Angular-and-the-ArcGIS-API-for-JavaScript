@@ -13,6 +13,7 @@
 
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { loadModules } from 'esri-loader';
+import esri = __esri;
 
 @Component({
   selector: 'app-esri-map',
@@ -30,19 +31,25 @@ export class EsriMapComponent implements OnInit {
   ngOnInit() {
     loadModules([
       'esri/Map',
-      'esri/views/MapView'
+      'esri/views/MapView', 'esri/Graphic'
     ])
-      .then(([EsriMap, EsriMapView]) => {
-        const map = new EsriMap({
+      .then(([EsriMap, EsriMapView, Graphic]) => {
+        // STEP 1: construct a typed Map instance with typed constructor properties
+        const mapOptions: esri.MapProperties = {
           basemap: 'streets'
-        });
+        };
 
-        const mapView = new EsriMapView({
+        const map: esri.Map = new EsriMap(mapOptions);
+
+        // STEP 2: construct a typed MapView instance with typed constructor properties
+        const mapViewOptions: esri.MapViewProperties = {
           container: this.mapViewEl.nativeElement,
           center: [0.1278, 51.5074],
           zoom: 10,
           map: map
-        });
+        };
+
+        const mapView: esri.MapView = new EsriMapView(mapViewOptions);
       })
       .catch(err => {
         console.error(err);

@@ -76,7 +76,7 @@
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-3.png" data-state="intro-css">
+			<section data-markdown data-background="img/bg-2.png" data-state="intro-css">
 				<textarea data-template>
 					## Angular?	Yes. Angular.
 
@@ -92,7 +92,7 @@
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-4.png" id="presentations-this-week">
+			<section data-markdown data-background="img/bg-2.png" id="presentations-this-week">
 				<textarea data-template>
 					## Upcoming, related presentations
 			
@@ -110,21 +110,21 @@
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-5.png">
+			<section data-markdown data-background="img/bg-2.png">
 				<textarea data-template>
 					## What's the plan today?
 			
 					### Assuming some familiarity with Angular 2+:
 
-					* Walk through sample Angular apps
+					- Walk through sample Angular apps
 
-					* Learn how to use Esri JSAPI _inside of_ Angular apps
+					- Learn how to use Esri JSAPI _inside of_ Angular apps
 					
-					* Consume Esri JSAPI from CDN
+					- Consume Esri JSAPI from CDN
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-6.png" data-state="into-css">
+			<section data-markdown data-background="img/bg-2.png" data-state="into-css">
 				<textarea data-template>
 					## Getting started
 
@@ -135,92 +135,248 @@
 						- ./sample_apps/1-app-scaffolding
 						
 						- ./sample_apps/2-more-app-scaffolding
+
+						- ./sample_apps/3-the-esri-loader
 						
 						- ...and more...
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-7.png">
+			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
 					## 1-app-scaffolding
 			
-					* Bullet [points here](http://hakim.se).
-				</textarea>
-			</section>
+					- Quick start instructions for this demo
 
-			<section data-markdown data-background="img/bg-8.png">
-				<textarea data-template>
-					## 2-app-scaffolding
-			
-					* Bullet [points here](http://hakim.se).
-				</textarea>
-			</section>
+						```bash
+						# once, and as needed on your computer
+						npm install -g @angular/cli
+						```
 
-			<section data-markdown data-background="img/bg-9.png">
-				<textarea data-template>
-					## 3-the-esri-loader
-			
-					* Bullet [points here](http://hakim.se).
-				</textarea>
-			</section>
+						```bash
+						cd ./sample_apps/1-app-scaffolding
 
-			<section data-markdown data-background="img/bg-2.png">
-				<textarea data-template>
-					## 4-types-for-arcgis-api
-			
-					* Bullet [points here](http://hakim.se).
+						npm install
+
+						# serve the app for dev
+						ng serve
+
+						# or, if you want to build the app for prod
+						# ng build --base-href ./
+						```
 				</textarea>
 			</section>
 
 			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
-					## 5-simple-async
+					## 1-app-scaffolding
 			
-					* Bullet [points here](http://hakim.se).
+					- Building blocks:
+
+						- Angular CLI
+
+						- "esri-loader"
+
+						- custom demo files:
+						
+							- `esri-map.component.ts`
+
+							- custom demo `esri-map.component.html`
+
+							- custom demo `esri-map.component.css`
 				</textarea>
 			</section>
 
 			<section data-markdown data-background="img/bg-4.png">
 				<textarea data-template>
-					## 6-more-async
-
-					* Bullet [points here](http://hakim.se).
+					## 2-app-scaffolding
+			
+					- Bullet [points here](http://hakim.se).
 				</textarea>
 			</section>
 
 			<section data-markdown data-background="img/bg-5.png">
 				<textarea data-template>
-					## 7-simple-map-state
+					## 3-the-esri-loader
 			
-					* Bullet [points here](http://hakim.se).
+					- The glue that holds everything together is ["Esri/esri-loader"](https://github.com/Esri/esri-loader).
+
+						&gt; "A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications"
+
+						```ts
+						/* ANGULAR GALAXY AND COLD VACUUM OF SPACE OUT HERE! */
+
+						import { loadModules } from 'esri-loader';
+
+						loadModules([
+							'esri/Map', 'esri/views/MapView', 'esri/Graphic'
+						]).then(([
+							EsriMap, EsriMapView, Graphic
+						]) =&gt; {
+							/* ESRI PLANET WITH ATMOSPHERE INSIDE HERE! */
+
+							// for example you could recreate any demo from https://js.arcgis.com
+						});
+
+						/* ANGULAR GALAXY AND COLD VACUUM OF SPACE OUT HERE! */
+						```
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-5.png">
+				<textarea data-template>
+					## 3-the-esri-loader
+			
+					- This brings Esri **WITHIN** Angular
+
+					- Which ultimately means Dojo **INSIDE OF** Angular
+
+					- How?
+
+						- ES/TS module with `loadModulues` method that you `import` as needed.
+
+						- It dynamically injects an ArcGIS for JavaScript API `&lt;script&gt;` tag onto the page.
+
+						- You tell `loadModules` which Esri modules you want, à la carte.
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-5.png">
+				<textarea data-template>
+					## 3-the-esri-loader
+
+					- Why?
+
+						&gt; "The only reliable way to load ArcGIS API for JavaScript modules is using Dojo's AMD loader."
+
+					- You benefit from getting to:
+
+						- use Angular tooling
+
+						- improve initial app load performance
+
+						- control exactly when to load and use Esri modules
 				</textarea>
 			</section>
 
 			<section data-markdown data-background="img/bg-6.png">
 				<textarea data-template>
-					## 8-more-map-state
+					## 4-types-for-arcgis-api
 			
-					* Bullet [points here](http://hakim.se).
+					- [Esri provides type definitions](https://github.com/Esri/jsapi-resources/) for the ArcGIS API for JavaScript
+
+					- For Esri v4.x, install them with
+					
+						```bash
+						npm install --save @types/arcgis-js-api
+						```
+
+						and also add to `tsconfig.app.json`.
+
+						```json
+						"types": ["arcgis-js-api"]
+						```
+
+					- Types are available through global "`__esri`" namespace for Esri v4.x
+
+						- We recommend renaming to "`esri`" with
+
+						```ts
+						import esri = __esri;
+						```
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					## 4-types-for-arcgis-api
+					
+					- More info is available at https://github.com/Esri/jsapi-resources/
+
+						```ts
+						// without
+						const map = new EsriMap({ /* zoom, center, etc. */ });
+
+						// with
+						const mapOptions: esri.MapProperties = {
+							basemap: 'streets'
+						};
+						const map: esri.Map = new EsriMap(mapOptions);
+						```
+
+						```ts
+						// without
+						const arrayOfGraphics = [];
+						const myGraphic = new Graphic({ /* geometry, symbol, etc. */ });
+						arrayOfGraphics.push(myGraphic)
+
+						// with
+						const arrayOfGraphics: esri.Graphic[] = [];
+						const myGraphic: esri.Graphic = new Graphic({ /* geometry, symbol, etc. */ });
+						arrayOfGraphics.push(myGraphic);
+						```
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					## 4-types-for-arcgis-api
+					
+					- Example of IntelliSense in VS Code
+
+  					![autocomplete screenshot](img/autocomplete_screenshot.png)
 				</textarea>
 			</section>
 
 			<section data-markdown data-background="img/bg-7.png">
 				<textarea data-template>
-					## 9-arcgis-api-service
+					## 5-simple-async
 			
-					* Bullet [points here](http://hakim.se).
+					- Bullet [points here](http://hakim.se).
 				</textarea>
 			</section>
 
 			<section data-markdown data-background="img/bg-8.png">
 				<textarea data-template>
-					## 10-ionic
-			
-					* Bullet [points here](http://hakim.se).
+					## 6-more-async
+
+					- Bullet [points here](http://hakim.se).
 				</textarea>
 			</section>
 
 			<section data-markdown data-background="img/bg-9.png">
+				<textarea data-template>
+					## 7-simple-map-state
+			
+					- Bullet [points here](http://hakim.se).
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-2.png">
+				<textarea data-template>
+					## 8-more-map-state
+			
+					- Bullet [points here](http://hakim.se).
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-3.png">
+				<textarea data-template>
+					## 9-arcgis-api-service
+			
+					- Bullet [points here](http://hakim.se).
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-4.png">
+				<textarea data-template>
+					## 10-ionic
+			
+					- Bullet [points here](http://hakim.se).
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-5.png">
 				<textarea data-template>
 					## Where to get help: Esri JSAPI
 					
@@ -232,7 +388,7 @@
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-9.png">
+			<section data-markdown data-background="img/bg-5.png">
 				<textarea data-template>
 					## Where to get help: esri-loader
 
@@ -244,25 +400,37 @@
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-9.png">
+			<section data-markdown data-background="img/bg-5.png">
 				<textarea data-template>
-					## Additional resources
+					## Where to get help: Angular
 
-					* https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript
+					- Angular docs, Stack Overflow...
 
-					* https://github.com/Esri/angular-cli-esri-map
+					- ?
 
-					* [Related presentations this week](#/presentations-this-week)
-
-					* ["Esri/esri-loader"](https://github.com/Esri/esri-loader) is your new friend
-
-					* Tom Wayson's blog: ["Loader of the Things: One Library to Load Them All"](http://tomwayson.com/2018/01/05/loader-of-the-things-one-library-to-load-them-all/)
-
-					* And more Angular info at ["Esri/jsapi-resources"](https://github.com/Esri/jsapi-resources/tree/master/frameworks/angular)
+					- ?
 				</textarea>
 			</section>
 
-			<section data-background="img/bg-2.png" data-background-size="cover" style="padding-left: 28%;">
+			<section data-markdown data-background="img/bg-5.png">
+				<textarea data-template>
+					## Additional resources
+
+					- https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript
+
+					- https://github.com/Esri/angular-cli-esri-map
+
+					- [Related presentations this week](#/presentations-this-week)
+
+					- ["Esri/esri-loader"](https://github.com/Esri/esri-loader) is your new friend
+
+					- Tom Wayson's blog: ["Loader of the Things: One Library to Load Them All"](http://tomwayson.com/2018/01/05/loader-of-the-things-one-library-to-load-them-all/)
+
+					- And more Angular info at ["Esri/jsapi-resources"](https://github.com/Esri/jsapi-resources/tree/master/frameworks/angular)
+				</textarea>
+			</section>
+
+			<section data-background="img/bg-6.png" data-background-size="cover" style="padding-left: 28%;">
 				<h1 style="text-align: left; font-size: 80px;">
 					Thank you
 				</h1>
