@@ -14,7 +14,9 @@ This observer/observable pattern provides a mechanism for our asynchronous opera
 ## The Service Class
 To set up a class to communicate using RxJS observables, first import RxJS into the class
 
-```import { Subject } from 'rxjs/Subject';```
+```
+import { Subject } from 'rxjs/Subject';
+```
 
 Next, defined the observable subjects within the class.
 ```
@@ -52,11 +54,13 @@ Finally, script the class methods that will call the next() methods, notifying t
  
  ## The Control Panel Component
  Subscribing to the observables in the map service is a three-step process.  First, import the service.
- ```import { EsriMapService } from '../services/esri-map.service';
+ ```
+  import { EsriMapService } from '../services/esri-map.service';
  ```
  Next, create a reference to the service in the control-panel component class’s constructor:
  
- ```constructor(private mapService: EsriMapService) { }
+ ```
+  constructor(private mapService: EsriMapService) { }
  ```
  Finally, declare a subscription instance in the control-panel component class’s initialization method.  Pass the callback method you want to the subscription method.
  ```
@@ -69,11 +73,13 @@ Finally, script the class methods that will call the next() methods, notifying t
  ## The Map Component
  
  The map component follows the same three-step process, but subscribes to a different observable. First, import the service.
- ```import { EsriMapService } from '../services/esri-map.service';
+ ```
+ import { EsriMapService } from '../services/esri-map.service';
  ```
  Next, create a reference to the service in the control-panel component class’s constructor:
  
- ```constructor(private mapService: EsriMapService) { }
+ ```
+ constructor(private mapService: EsriMapService) { }
  ```
  Finally, declare a subscription instance in the control-panel component class’s initialization method.  Pass the callback method you want to the subscription method.
  ```
