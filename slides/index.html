@@ -29,6 +29,10 @@
 			box-shadow: none !important;
 		}
 
+		.blockquote-smaller blockquote {
+			font-size: 0.7em;
+		}
+
 	</style>
 </head>
 
@@ -116,7 +120,7 @@
 			
 					### Assuming some familiarity with Angular 2+:
 
-					- Walk through sample Angular apps
+					- Walk through sample Angular apps from http://esriurl.com/13900
 
 					- Learn how to use Esri JSAPI _inside of_ Angular apps
 					
@@ -128,7 +132,9 @@
 				<textarea data-template>
 					## Getting started
 
-					1. Download https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript
+					1. Download our repo at http://esriurl.com/13900
+
+						- Github "sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript"
 
 					2. Follow along as we work with Angular sample apps
 
@@ -149,20 +155,22 @@
 					- Quick start instructions for this demo
 
 						```bash
-						# once, and as needed on your computer
+						# only once on your computer
 						npm install -g @angular/cli
 						```
 
 						```bash
+						# go to the first sample app
 						cd ./sample_apps/1-app-scaffolding
 
+						# install dependencies
 						npm install
 
-						# serve the app for dev
+						# serve the app for development
 						ng serve
 
-						# or, if you want to build the app for prod
-						# ng build --base-href ./
+						# or, if you want to build for production
+						ng build --base-href ./
 						```
 				</textarea>
 			</section>
@@ -181,9 +189,9 @@
 						
 							- `esri-map.component.ts`
 
-							- custom demo `esri-map.component.html`
+							- `esri-map.component.html`
 
-							- custom demo `esri-map.component.css`
+							- `esri-map.component.css`
 				</textarea>
 			</section>
 
@@ -195,7 +203,7 @@
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-5.png">
+			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
 				<textarea data-template>
 					## 3-the-esri-loader
 			
@@ -241,7 +249,7 @@
 				</textarea>
 			</section>
 
-			<section data-markdown data-background="img/bg-5.png">
+			<section data-markdown data-background="img/bg-5.png" data-state="blockquote-smaller">
 				<textarea data-template>
 					## 3-the-esri-loader
 
@@ -322,9 +330,11 @@
 				<textarea data-template>
 					## 4-types-for-arcgis-api
 					
-					- Example of IntelliSense in VS Code
+					Example of IntelliSense in VS Code
 
-  					![autocomplete screenshot](img/autocomplete_screenshot.png)
+					![autocomplete screenshot](img/autocomplete_screenshot.png)
+						
+					Thanks, type definitions!
 				</textarea>
 			</section>
 
@@ -416,7 +426,9 @@
 				<textarea data-template>
 					## Additional resources
 
-					- https://github.com/sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript
+					- http://esriurl.com/13900
+					
+					  - Github "sean-olson-e/Angular-and-the-ArcGIS-API-for-JavaScript"
 
 					- https://github.com/Esri/angular-cli-esri-map
 
