@@ -7,9 +7,22 @@ This sample provides a boilerplate for standing up an Angular app that implement
 - Quick start:
 
   ```bash
+  # only once on your computer
+  npm install -g @angular/cli
+  ```
+
+  ```bash
+  # go to the first sample app
+  cd ./sample_apps/1-app-scaffolding
+
+  # install dependencies
   npm install
+
+  # serve the app for development
   ng serve
-  # or: ng build --base-href ./
+
+  # or, if you want to build for production
+  ng build --base-href ./
   ```
 
 - Building blocks:

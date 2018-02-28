@@ -51,9 +51,11 @@ This sample provides a boilerplate for standing up an Angular app that implement
   arrayOfGraphics.push(myGraphic);
   ```
 
-- Example of IntelliSense in VS Code
+Example of IntelliSense in VS Code
 
-  ![autocomplete screenshot](autocomplete_screenshot.png)
+![autocomplete screenshot](autocomplete_screenshot.png)
+
+Thanks, type definitions!
 
 ## Background info on this sample code
 
