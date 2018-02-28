@@ -33,10 +33,10 @@ This sample provides a boilerplate for standing up an Angular app that implement
   const map = new EsriMap({ /* zoom, center, etc. */ });
 
   // with
-  const mapOptions: esri.MapProperties = {
+  const mapProperties: esri.MapProperties = {
     basemap: 'streets'
   };
-  const map: esri.Map = new EsriMap(mapOptions);
+  const map: esri.Map = new EsriMap(mapProperties);
   ```
 
   ```ts
