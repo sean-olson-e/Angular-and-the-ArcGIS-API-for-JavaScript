@@ -31,25 +31,25 @@ export class EsriMapComponent implements OnInit {
   ngOnInit() {
     loadModules([
       'esri/Map',
-      'esri/views/MapView', 'esri/Graphic'
+      'esri/views/MapView'
     ])
-      .then(([EsriMap, EsriMapView, Graphic]) => {
+      .then(([EsriMap, EsriMapView]) => {
         // STEP 1: construct a typed Map instance with typed constructor properties
-        const mapOptions: esri.MapProperties = {
+        const mapProperties: esri.MapProperties = {
           basemap: 'streets'
         };
 
-        const map: esri.Map = new EsriMap(mapOptions);
+        const map: esri.Map = new EsriMap(mapProperties);
 
         // STEP 2: construct a typed MapView instance with typed constructor properties
-        const mapViewOptions: esri.MapViewProperties = {
+        const mapViewProperties: esri.MapViewProperties = {
           container: this.mapViewEl.nativeElement,
           center: [0.1278, 51.5074],
           zoom: 10,
           map: map
         };
 
-        const mapView: esri.MapView = new EsriMapView(mapViewOptions);
+        const mapView: esri.MapView = new EsriMapView(mapViewProperties);
       })
       .catch(err => {
         console.error(err);
