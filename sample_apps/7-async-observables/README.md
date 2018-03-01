@@ -18,7 +18,7 @@ To set up a class to communicate using RxJS observables, first import RxJS into 
 import { Subject } from 'rxjs/Subject';
 ```
 
-Next, defined the observable subjects within the class.
+Next, define the observable subjects within the class.
 ```
   panRequest = new Subject<void>();
   panComplete = new Subject<void>();
