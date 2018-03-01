@@ -28,7 +28,7 @@ export class EsriMapComponent implements OnInit {
 
   constructor(private mapService: EsriMapService) {}
 
-  panMap = (coordinates) => {
+  panMap(coordinates){
     this.mapView.goTo(coordinates)
     .then(() => {
       this.mapView.zoom = 18;

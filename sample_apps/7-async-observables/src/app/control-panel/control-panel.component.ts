@@ -40,12 +40,12 @@ export class ControlPanelComponent implements OnInit {
 
   }
 
-  disablePanel = (name) => {
+  disablePanel(name){
     this.selectorDisabled = true;
     this.feedback = 'Panning to ' + name + '.';
   }
 
-  enablePanel = () => {
+  enablePanel(){
     this.selectorDisabled = false;
     this.feedback = 'Done!';
     setTimeout(() => { this.feedback = ''; }, 1000);
