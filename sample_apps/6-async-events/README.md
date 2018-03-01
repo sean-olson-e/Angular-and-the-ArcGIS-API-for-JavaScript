@@ -90,4 +90,4 @@ Then from within the esri-map component class's ```panMap()``` method, call the 
 5.	When ready, trigger the custom event from within the child.
 6.	When the parent class's custom event listener is triggered, continue operations.
 
-*_"too long; didn't read"_
+*"too long; didn't read"
