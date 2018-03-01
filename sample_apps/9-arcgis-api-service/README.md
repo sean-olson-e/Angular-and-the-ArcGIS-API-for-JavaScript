@@ -10,11 +10,19 @@ We create a basic service that wraps the map creation code in a promise that we'
 ## The Service Class
 To set up a class you can either use `ng generate service esri-map.service` or you can copy and paste code from this sample. In this service, we have also added in TypeScript typings, so it will look a little different than sample 2. 
 
-First we need to import our modules:
+First we need to import our modules. 
 
 ```
   import { loadModules } from 'esri-loader';
   import esri = __esri;
+
+```
+
+If `esri-loader` and the Esri Typings aren't included in your `package.json` then you'll need to manually install them:
+
+```
+  npm install --save esri-loader
+  npm install --save @types/arcgis-js-api
 
 ```
 
