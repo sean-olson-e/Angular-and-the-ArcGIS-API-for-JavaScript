@@ -38,13 +38,6 @@
 
 <body>
 	<div class="reveal">
-		<!-- NOTE: This is a fork from the Esri-approved PPT file here:
-			https://compass.esri.com/org/marketing/DevSummit/Pages/Workshop.aspx
-			We have moved the background images and have formatted the title slide,
-			But other things like alignment of text on subsequent slides may not be
-			in line with the PPT - use this template at your own risk!
-			-->
-
 		<div class="slides">
 			<section data-background="img/bg-1.png" data-background-size="cover" style="padding-left: 80px;">
 				<h1 style="text-align: left; font-size: 80px;">
@@ -213,7 +206,7 @@
 
 						&gt; "A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications"
 
-						```ts
+						```typescript
 						/* ANGULAR GALAXY AND COLD VACUUM OF SPACE OUT HERE! */
 
 						import { loadModules } from 'esri-loader';
@@ -245,9 +238,7 @@
 
 						- ES/TS module with `loadModulues` method that you `import` as needed.
 
-						- It dynamically injects an ArcGIS for JavaScript API `&lt;script&gt;` tag onto the page.
-
-						- You tell `loadModules` which Esri modules you want, à la carte.
+						- `loadModulues` method dynamically injects an Esri `&lt;script&gt;` tag onto the page.
 				</textarea>
 			</section>
 
@@ -257,7 +248,7 @@
 
 					- Why?
 
-						&gt; "The only reliable way to load ArcGIS API for JavaScript modules is using Dojo's AMD loader."
+						- Provides a reliable way to load Esri modules, using Dojo's AMD loader.
 
 					- You benefit from getting to:
 
@@ -265,7 +256,31 @@
 
 						- improve initial app load performance
 
-						- control exactly when to load and use Esri modules
+						- control which Esri modules you want, à la carte
+				</textarea>
+			</section>
+
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					## 4-types-for-arcgis-api
+
+					- [TypeScript](https://www.typescriptlang.org/index.html) is used throughout Angular's documentation
+
+					- It is "a typed superset of JavaScript that compiles to plain JavaScript"
+
+					- It allows for compile-time type checking for JavaScript
+
+						```typescript
+						// without types
+						let fullName = 'Bob Bobbington';
+						let age = 37;
+						
+						// with types
+						let fullName: string = 'Bob Bobbington';
+						let age: number = 37;
+						```
+
+					- https://www.typescriptlang.org/docs/handbook/basic-types.html
 				</textarea>
 			</section>
 
@@ -291,7 +306,7 @@
 
 						- We recommend renaming to "`esri`" with
 
-						```ts
+						```typescript
 						import esri = __esri;
 						```
 				</textarea>
@@ -303,7 +318,7 @@
 					
 					- More info is available at https://github.com/Esri/jsapi-resources/
 
-						```ts
+						```typescript
 						// without
 						const map = new EsriMap({ /* zoom, center, etc. */ });
 
@@ -314,7 +329,7 @@
 						const map: esri.Map = new EsriMap(mapProperties);
 						```
 
-						```ts
+						```typescript
 						// without
 						const arrayOfGraphics = [];
 						const myGraphic = new Graphic({ /* geometry, symbol, etc. */ });
