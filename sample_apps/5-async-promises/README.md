@@ -63,4 +63,4 @@ The esri-map component class shown here, shows the exposed method, ```panMap()``
 4. When ready, resolve the promise in the child class.
 5. When the parent class’s promise is resolved, continue operation 
 
-*_"too long; didn't read"_
+*"too long; didn't read"

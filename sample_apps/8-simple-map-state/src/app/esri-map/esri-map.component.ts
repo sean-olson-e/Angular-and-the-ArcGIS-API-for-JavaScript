@@ -25,14 +25,12 @@ import { MapStateService } from '../services/map-state.service';
 export class EsriMapComponent implements OnInit {
 
   public mapView: __esri.MapView;
-  msService: MapStateService;
+
 
   // this is needed to be able to create the MapView at the DOM element in this component
   @ViewChild('mapViewNode') private mapViewEl: ElementRef;
 
-  constructor(msService: MapStateService) {
-    this.msService = msService;
-  }
+  constructor(private msService: MapStateService) {}
 
   public ngOnInit() {
     // use esri-loader to load JSAPI modules
