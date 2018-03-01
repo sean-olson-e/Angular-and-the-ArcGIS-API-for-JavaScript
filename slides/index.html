@@ -342,36 +342,353 @@
 
 			<section data-markdown data-background="img/bg-7.png">
 				<textarea data-template>
-					## 5-simple-async
-			
-					- Bullet [points here](http://hakim.se).
+					![asynchronous operations](img/async_operations.png)
 				</textarea>
 			</section>
-
+			<section data-markdown data-background="img/bg-7.png">
+				<textarea data-template>
+					![asynchronous patterns](img/async_pattern_options.png)
+				</textarea>
+			</section>
 			<section data-markdown data-background="img/bg-8.png">
 				<textarea data-template>
-					## 6-more-async
-
-					- Bullet [points here](http://hakim.se).
+					![app screenshot](img/app_screenshot.png)
 				</textarea>
 			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					![asynchronous operations](img/async_promises.png)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### Async Operation with Promises
 
+					1. Import the ```ViewChild``` and child class modules into the parent component class.
+					2. Create an instance variable of the child class.
+					3. Invoke a child-component method from the parent that will return a promise.
+					4. When ready, resolve the promise in the child class.
+					5. When the parent class’s promise is resolved, continue operation
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### The Dashboard Component
+					```
+					import { Component, ViewChild, OnInit } from '@angular/core';
+ 					import { EsriMapComponent } from '../esri-map/esri-map.component';
+					```
+
+					```
+					export class DashboardComponent implements OnInit {
+   						@ViewChild(EsriMapComponent) map: EsriMapComponent;
+						...
+
+						selectedWonder = (ev) => {
+						  this.disablePanel(this.sevenWonders[ev.target.value].name);
+						  this.map.panMap(this.sevenWonders[ev.target.value].coordinates)
+							.then(() => {
+							  this.enablePanel();
+							})
+						}
+					}
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### The Map Component
+					```
+					  panMap = (coordinates) => {
+						return new Promise((resolve, reject) => {
+						  this.mapView.goTo(coordinates)
+						  .then(() => {
+							this.mapView.zoom = 18;
+							setTimeout(() => {
+							  resolve();
+							}, 2000);
+						  }).catch((err) => {
+							reject(err);
+						  });
+						});
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-8.png">
+				<textarea data-template>
+					![asynchronous operations](img/async_events.png)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-8.png">
+				<textarea data-template>
+					### Async Operation with Custom Events
+
+					1.	Import the ```ViewChild``` and child class modules into the parent component class.
+					2.	Create an instance variable referencing the child class.
+					3.	Configure an event listener in the parent component template that will be triggered by the child.
+					4.	From the parent component class, invoke a method in the child-component class.
+					5.	When ready, the child triggers the custom event.
+					6.	When the parent class's custom event listener is triggered, continue operations.
+
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### The Dashboard Component
+					```
+					import { Component, ViewChild, OnInit } from '@angular/core';
+ 					import { EsriMapComponent } from '../esri-map/esri-map.component';
+					```
+
+					```
+					export class DashboardComponent implements OnInit {
+   						@ViewChild(EsriMapComponent) map: EsriMapComponent;
+						...
+						selectedWonder = (ev) => {
+							this.disablePanel(this.sevenWonders[ev.target.value].name);
+							this.map.panMap(this.sevenWonders[ev.target.value].coordinates);
+						}
+					    ...
+						enablePanel = () => {
+							this.selectorDisabled = false;
+						};
+					}
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### The Dashboard Template
+					```
+					  <div class="container">
+						<div class="row">
+						...
+						  <div class="col-8">
+							  <app-esri-map (wonderMapped)="enablePanel()"></app-esri-map>
+						  </div>
+						</div>
+					  </div>
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### The Map Component
+					```
+					import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+					```
+
+					```
+					export class EsriMapComponent implements OnInit {
+
+  						@Output() wonderMapped = new EventEmitter();
+						...
+						panMap = (coordinates) => {
+							return new Promise((resolve, reject) => {
+							this.mapView.goTo(coordinates)
+						  		.then(() => {
+									this.mapView.zoom = 18;
+							  		resolve();
+						  		}).catch((err) => {
+									reject(err);
+						  		});
+							});
+						...
+					}
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-8.png">
+				<textarea data-template>
+					![asynchronous operations](img/async_observables.png)
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-8.png">
+				<textarea data-template>
+					### Async Operation with Observables
+
+					1.	Create a service class with RxJS included
+					2.	Define subscription observables within the service class.
+					3.	Configure the App Module to inject the service class into the application as a dependency.
+					4.	Create component class that will use the service.
+					5.	Create a reference to the service in the component class’s constructor.
+					6.	Subscribe to service observables in the component class’s initialization method.
+
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### The Service Class
+					```
+					import { Subject } from 'rxjs/Subject';
+					```
+
+					```
+					export class EsriMapService {
+					  	panRequest = new Subject<void>();
+					  	panComplete = new Subject<void>();
+						...
+						panToWonder = (wonder_coordinates) => {
+							this.panRequest.next();
+						}
+						...
+					  	panToWonderComplete = () => {
+							this.panComplete.next();
+					  	}
+					  	...
+					}
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### The Control Panel Component
+					```
+					import { EsriMapService } from '../services/esri-map.service';
+					```
+
+					```
+					export class ControlPanelComponent implements OnInit {
+						...
+					  	selectedWonder = (ev) => {
+							this.disablePanel(this.sevenWonders[ev.target.value].name);
+							this.mapService.panToWonder(this.sevenWonders[ev.target.value].coordinates);
+					  	}
+
+					  	constructor(private mapService: EsriMapService) { }
+
+					  	ngOnInit() {
+							this.panCompleteSubscription = this.mapService.panComplete.subscribe(() => {
+						  	this.enablePanel();
+							});
+					  	}
+					}
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### The Map Component
+					```
+					import { EsriMapService } from '../services/esri-map.service';
+					```
+					```
+					export class EsriMapComponent implements OnInit {
+						...
+						constructor(private mapService: EsriMapService) {}
+						panMap = (coordinates) => {
+							this.mapView.goTo(coordinates)
+							.then(() => {
+								this.mapService.panToWonderComplete();
+							});
+						}
+						public ngOnInit() {
+							this.panRequestSubscription = this.mapService.panRequest.subscribe(() => {
+							  this.panMap(this.mapService.wonderCoordinates);
+							});
+							...
+						}
+					}
+					```
+				</textarea>
+			</section>
 			<section data-markdown data-background="img/bg-9.png">
 				<textarea data-template>
-					## 7-simple-map-state
-			
-					- Bullet [points here](http://hakim.se).
+					![app screenshot](img/state_management.png)
 				</textarea>
 			</section>
-
-			<section data-markdown data-background="img/bg-2.png">
+			<section data-markdown data-background="img/bg-8.png">
 				<textarea data-template>
-					## 8-more-map-state
-			
-					- Bullet [points here](http://hakim.se).
+					![app screenshot](img/app_screenshot_2.png)
 				</textarea>
 			</section>
+			<section data-markdown data-background="img/bg-8.png">
+				<textarea data-template>
+					### State Management with Services
 
+					1.	Create a new class that will hold map-state properties
+					2.	Configure the App Module to inject the service class into the application as a dependency.
+					3.	Create component class that will use the service.
+					4.	Create a reference to the service in the component class’s constructor.
+					5.	Use the class’s getter and setters to save and restore map state.
+
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### The Service Class
+
+					```
+					@Injectable()
+					export class MapStateService {
+					  private _points: __esri.Graphic[] = [];
+					  get points() {
+						return this._points;
+					  }
+					  addPoint(point: __esri.Graphic) {
+						this.points.push(point);
+					  }
+					  constructor() { }
+					}
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### Injecting the Service into the App
+
+					In the ```app.module.ts``` file
+					```
+					import { MapStateService } from './services/map-state.service;
+					```
+					```
+					@NgModule({
+					  ...
+					  providers: [MapStateService],
+					  ...
+					})
+					```
+				</textarea>
+			</section>
+			<section data-markdown data-background="img/bg-6.png">
+				<textarea data-template>
+					### The Map Component
+
+					```
+					import { MapStateService } from '../services/map-state.service';
+					```
+					```
+					export class EsriMapComponent implements OnInit {
+						...
+						constructor(private msService: MapStateService) {}
+					  	public ngOnInit() {
+							return loadModules([
+								...
+							])
+						  	.then(([Map, MapView, Graphic]) => {
+								...
+								this.mapView = new MapView({
+								...
+								});
+
+								this.mapView.when(() => {
+									if (this.msService.points.length) {e
+								  	this.mapView.graphics.addMany(this.msService.points);
+									}
+							  	});
+
+							this.mapView.on('click', (event: __esri.MapViewClickEvent) => {
+							  const pointGraphic: __esri.Graphic = new Graphic({
+								...
+							  });
+							  this.msService.addPoint(pointGraphic);
+								...
+							});
+					  }
+					}
+					```
+				</textarea>
+			</section>
 			<section data-markdown data-background="img/bg-3.png">
 				<textarea data-template>
 					## 9-arcgis-api-service
