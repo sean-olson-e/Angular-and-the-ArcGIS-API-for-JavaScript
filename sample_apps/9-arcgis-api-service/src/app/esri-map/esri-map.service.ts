@@ -15,6 +15,7 @@ export class EsriMapService {
         'esri/views/MapView'
       ])
         .then(([EsriMap, EsriMapView]) => {
+
           let map: esri.Map = new EsriMap({
             basemap: basemap
           });
