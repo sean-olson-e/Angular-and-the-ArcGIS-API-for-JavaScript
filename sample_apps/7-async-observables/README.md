@@ -95,4 +95,5 @@ Finally, script the class methods that will call the next() methods, notifying t
 4.	Create component class that will use the service.
 5.	Create a reference to the service in the component class’s constructor.
 6.	Subscribe to service observables in the component class’s initialization method.
+
 *"too long; didn't read"

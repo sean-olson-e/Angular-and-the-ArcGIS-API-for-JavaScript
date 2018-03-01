@@ -2,7 +2,7 @@
 This sample app demonstrates a pattern for managing map state through the use of a service that stores map-state properties.
 
 ## Overview
-A challenge with more complex Angular mapping apps comes with tthe need to maintain map state while routing.  Each time a route loads a component that contains a map, the component will (re-)initialize itself, setting the map to its original state.  So how do you maintain the state of your map?  One way is through the use of a map-state service.
+A challenge with more complex Angular mapping apps comes with the need to maintain map state while routing.  Each time a route loads a component that contains a map, the component will (re-)initialize itself, setting the map to its original state.  So how do you maintain the state of your map?  One way is through the use of a map-state service.
 
 This sample app walks you through creating service that will keep track of points on a map.  As the points are added to the map, they are saved to a service property simultaneously.  Every time the user routes to the map view, the component gets the previously-saved points saved in the service and adds them to the map view, effectively refreshing the map state.
 
@@ -88,4 +88,5 @@ TL;DR*
 3.	Create component class that will use the service.
 4.	Create a reference to the service in the component class’s constructor.
 5.	Use the class’s getter and setters to save and restore map state.
+
 *"too long; didn't read"
