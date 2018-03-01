@@ -1,3 +1,0 @@
-# More
-
-STUB PLACEHOLDER 2
