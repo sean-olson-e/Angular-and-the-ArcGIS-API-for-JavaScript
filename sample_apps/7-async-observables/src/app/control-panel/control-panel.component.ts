@@ -35,7 +35,7 @@ export class ControlPanelComponent implements OnInit {
     // disable the panel
     this.disablePanel(this.sevenWonders[ev.target.value].name);
 
-    // // call the panMap method of the child map component
+    // call the panMap method of the child map component
     this.mapService.panToWonder(this.sevenWonders[ev.target.value].coordinates);
 
   }

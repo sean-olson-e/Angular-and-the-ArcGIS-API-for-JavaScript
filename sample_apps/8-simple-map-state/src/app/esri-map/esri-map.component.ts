@@ -83,7 +83,6 @@ export class EsriMapComponent implements OnInit {
           });
 
           this.msService.addPoint(pointGraphic);
-
           this.mapView.graphics.add(this.msService.points[this.msService.points.length - 1]);
         });
       })
