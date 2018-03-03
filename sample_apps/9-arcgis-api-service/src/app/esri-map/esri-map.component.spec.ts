@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EsriMapComponent } from './esri-map.component';
-import { AppComponent } from '../app.component';
+import { EsriMapService } from './esri-map.service';
 
 describe('EsriMapComponent', () => {
   let component: EsriMapComponent;
@@ -10,7 +10,8 @@ describe('EsriMapComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [EsriMapComponent]
+      declarations: [EsriMapComponent],
+      providers: [EsriMapService]
     })
       .compileComponents();
     fixture = TestBed.createComponent(EsriMapComponent);
