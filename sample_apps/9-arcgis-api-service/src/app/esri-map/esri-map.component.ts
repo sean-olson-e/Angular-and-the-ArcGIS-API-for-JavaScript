@@ -57,7 +57,7 @@ export class EsriMapComponent implements OnInit {
   @Output() mapLoaded = new EventEmitter<boolean>();
 
   // this is needed to be able to create the MapView at the DOM element in this component
-  @ViewChild('mapViewNode') private mapViewEl: ElementRef;
+  @ViewChild('mapViewNode') public mapViewEl: ElementRef;
 
   constructor(private esriMapService: EsriMapService) { }
 

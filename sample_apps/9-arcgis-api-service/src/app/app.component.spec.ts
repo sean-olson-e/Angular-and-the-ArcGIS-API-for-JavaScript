@@ -4,7 +4,7 @@ import { EsriMapComponent } from './esri-map/esri-map.component';
 import { EsriMapService } from './esri-map/esri-map.service';
 
 describe('AppComponent', () => {
-  let fixture, app, spy;
+  let fixture, app;
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [

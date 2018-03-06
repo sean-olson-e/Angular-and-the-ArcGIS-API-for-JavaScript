@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { EsriMapComponent } from './esri-map.component';
 import { EsriMapService } from './esri-map.service';
 
@@ -24,11 +23,6 @@ describe('EsriMapComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create MapView', () => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('mapViewNode')).toBeDefined();
-  });
-
   it('basemap has a default value', () => {
     expect(app.basemap).toEqual(jasmine.any(String));
   });
@@ -38,7 +32,6 @@ describe('EsriMapComponent', () => {
   });
 
   it('zoom has a default value', () => {
-    console.log('center ' + app.zoom);
     expect(app.zoom).toBeGreaterThanOrEqual(0);
     expect(app.zoom).toBeLessThanOrEqual(24);
   });

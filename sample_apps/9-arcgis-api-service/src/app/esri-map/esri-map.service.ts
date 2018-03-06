@@ -29,7 +29,7 @@ export class EsriMapService {
 
           mapView.when(() => {
             // All the resources in the MapView and the map have loaded. Now execute additional processes
-            resolve();
+            resolve('true');
           }, err => {
             console.error(err);
             reject(err);
