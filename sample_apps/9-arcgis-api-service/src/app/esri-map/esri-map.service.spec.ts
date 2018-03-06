@@ -23,7 +23,6 @@ describe('EsriMapService', () => {
   it('should be created', inject([EsriMapService], (service: EsriMapService) => {
     expect(service).toBeTruthy();
     service.loadMap('topo',[0,0],10, app.mapViewEl).then((r) => {
-      console.log('booyahs ' + r);
       expect(r).toBeTruthy();
     });
   }));
