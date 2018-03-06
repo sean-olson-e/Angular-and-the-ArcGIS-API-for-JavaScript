@@ -4,6 +4,24 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
 ## Overview
 
+- [TypeScript](https://www.typescriptlang.org/index.html) is used throughout Angular's documentation
+
+- It is "a typed superset of JavaScript that compiles to plain JavaScript"
+
+- It allows for compile-time type checking for JavaScript
+
+  ```typescript
+  // without types
+  let fullName = 'Bob Bobbington';
+  let age = 37;
+
+  // with types
+  let fullName: string = 'Bob Bobbington';
+  let age: number = 37;
+  ```
+
+- https://www.typescriptlang.org/docs/handbook/basic-types.html
+
 - [Esri provides type definitions](https://github.com/Esri/jsapi-resources/) for the ArcGIS API for JavaScript
 
 - For Esri v4.x, install them with
@@ -22,13 +40,13 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
   - We recommend renaming to "`esri`" with
 
-  ```ts
+  ```typescript
   import esri = __esri;
   ```
 
 - More info is available at https://github.com/Esri/jsapi-resources/
 
-  ```ts
+  ```typescript
   // without
   const map = new EsriMap({ /* zoom, center, etc. */ });
 
@@ -39,7 +57,7 @@ This sample provides a boilerplate for standing up an Angular app that implement
   const map: esri.Map = new EsriMap(mapProperties);
   ```
 
-  ```ts
+  ```typescript
   // without
   const arrayOfGraphics = [];
   const myGraphic = new Graphic({ /* geometry, symbol, etc. */ });
