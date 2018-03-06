@@ -8,7 +8,7 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
   > "A tiny library to help load ArcGIS API for JavaScript modules in non-Dojo applications"
 
-  ```ts
+  ```typescript
   /*
     ANGULAR GALAXY AND COLD VACUUM OF SPACE OUT HERE!
   */
@@ -48,15 +48,17 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
 - How?
 
-  - ES/TS module with `loadModulues` method that you `import` as needed.
+  - `loadModulues` method that you `import` as needed
 
-  - It dynamically injects an ArcGIS for JavaScript API `<script>` tag onto the page.
+    ```typescript
+    import { loadModules } from 'esri-loader';
+    ```
 
-  - You tell `loadModules` which Esri modules you want, à la carte.
+  - `loadModulues` method dynamically injects an Esri `<script>` tag onto the page
 
 - Why?
 
-  > "The only reliable way to load ArcGIS API for JavaScript modules is using Dojo's AMD loader."
+  - Provides a reliable way to load Esri modules using Dojo's AMD loader
 
 - You benefit from getting to:
 
@@ -64,7 +66,7 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
   - improve initial app load performance
 
-  - control exactly when to load and use Esri modules
+  - control which Esri modules you want, à la carte
 
 ## Background info on this sample code
 
