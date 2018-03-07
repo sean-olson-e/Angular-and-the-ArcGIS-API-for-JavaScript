@@ -48,7 +48,7 @@ This sample provides a boilerplate for standing up an Angular app that implement
 
   ```typescript
   // without
-  const map = new EsriMap({ /* zoom, center, etc. */ });
+  const map = new EsriMap({ /* basemap, layers, etc. */ });
 
   // with
   const mapProperties: esri.MapProperties = {
