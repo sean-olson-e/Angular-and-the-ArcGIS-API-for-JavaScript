@@ -1,6 +1,10 @@
 # Angular-and-the-ArcGIS-API-for-JavaScript
 
-This repository was developed to support the [*Esri Dev Summit 2018* presentation](https://devsummit2018.schedule.esri.com/schedule/1205187518) of similar name.
+### Newer Version Available
+
+**NOTE:** This is the 2018 version of this presentation. For the 2019 presentation go here: https://github.com/andygup/angular-plus-arcgis-javascript-presentation
+
+### 2018 Version
 
 [Sean Olson](https://github.com/sean-olson-e) | [Andy Gup](https://github.com/andygup) |  [Jacob Wasilkowski](https://github.com/jwasilgeo)
 
@@ -8,7 +12,7 @@ In the [sample_apps](https://github.com/sean-olson-esri/2018_dev_summit_arcgis_a
 
 Each of the implementations in the `samples_apps` directory is accompanied by a README file that will walk you through the given implementation.
 
-## Getting started
+### Getting started
 
 ```bash
 # one-time only when cloning this repo,
